@@ -1,0 +1,13 @@
+# redirect netlify sitename to your sitename for SEO purposes,
+# to avoid duplicate content.  Do this for http and https
+https://val-app.netlify.app/* https://www.valoansforvets.com/:splat 301!
+http://val-app.netlify.app/* https://www.valoansforvets.com/:splat 301!
+
+# also redirect http to https for your custom domain.
+# Note that netlify automatically redirects to your custom domain from the bare domain (or vice versa), so you only need one rule here.
+http://www.valoansforvets.com/* https://www.valoansforvets.com/:splat 301!
+http://valoansforvets.com/* https://www.valoansforvets.com/:splat 301!
+https://valoansforvets.com/* https://www.valoansforvets.com/:splat 301!
+
+/archive/ https://www.valoansforvets.com/blog/ 301!
+# /va-pre-loan-faq/ https://www.valoansforvets.com/obtaining-a-va-home-loan/ 301!

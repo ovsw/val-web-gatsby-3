@@ -1,0 +1,28 @@
+@import '../../styles/custom-properties.css';
+@import '../../styles/custom-media.css';
+
+.customHeroSliderBg {
+  background-position: center right;
+  padding: 4rem 0;
+}
+
+@media (--media-max-small) {
+  .customHeroSliderBg {
+    padding:0;
+  }
+  .customContainer {
+    background-color: rgba(3,27,56,0.6);
+    /* padding-top: 10rem; */
+    max-width: 460px;
+  }
+  .customContainer h1 span {
+    margin-bottom: 11rem;
+  }
+  .sliderContent{
+    padding:3rem 0;
+  }
+  .customRow {
+    width: 100%!important;
+    margin: 0!important;
+  }
+}

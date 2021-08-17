@@ -1,0 +1,61 @@
+@import '../../styles/custom-properties.css';
+@import '../../styles/custom-media.css';
+
+
+.mobileNavContainer {
+  
+}
+
+@media (--media-min-large) {
+  .mobileNavContainer{
+    display:none!important;
+  }
+}
+
+.mobileNav {
+  /* display: none; */
+  width: 100%;
+  position:absolute;
+  background-color: black;
+  z-index: 900;
+  right:0;
+  top:60px;
+  padding:0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.mobileNav ul {
+  background-color: white;
+  padding:0;
+  margin: 0;
+}
+.mobileNav>ul li {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0.5rem 0;
+  position: relative;
+}
+.mobileNav>ul li ul {
+  border-top: 1px solid #f0f0f0;
+  margin-top:0.5rem;
+  margin-bottom:-0.5rem;
+  padding-left: 1rem;
+}
+.mobileNav>ul li ul li:last-child {
+  border-bottom:none;
+}
+.mobileNav>ul li a {
+  padding: 0 1rem;
+  display: block;
+  color: #505050;
+
+}
+
+@media (--media-min-med) {
+  .mobileNav{
+    width: auto;
+  }
+}
+
+.hamburgerBtn {
+  font-size: 2rem;
+  color: white;
+}

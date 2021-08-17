@@ -1,0 +1,21 @@
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
+
+.root {
+  background-color: rgb(255, 55, 47);
+  border-radius: 5px;
+}
+
+.root p {
+  color: rgb(221, 221, 221);
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+}
+
+.heading {
+  color: white;
+  font-weight: normal;
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  text-transform: uppercase;
+}

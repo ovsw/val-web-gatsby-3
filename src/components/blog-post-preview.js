@@ -1,16 +1,14 @@
 import { format } from "date-fns";
 import { Link } from "gatsby";
 import React from "react";
-// import {buildImageObj, getBlogUrl} from '../lib/helpers' // cn
-// import {imageUrlFor} from '../lib/image-url'
-import Img from "gatsby-image";
+
 import PortableText from "./portableText";
 
-// import styles from './blog-post-preview.module.css'
-// import {responsiveTitle3} from './typography.module.css'
+import { GatsbyImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 
 function BlogPostPreview(props) {
-  // const thumbSize = props.largeThumbs ? {width: 700, height: 400} : {width: 370, height: 252}
+  const postCoverImage = getImage(props.mainImage.asset);
 
   return (
     <div className="in-blog mt-30">
@@ -19,19 +17,10 @@ function BlogPostPreview(props) {
         <Link to={`/${props.slug.current}/`}>
           {props.mainImage && props.mainImage.asset && (
             <>
-              {/* <img
-                src={imageUrlFor(buildImageObj(props.mainImage))
-                  .width(thumbSize.width)
-                // .height(Math.floor((9 / 16) * 600))
-                  .height(thumbSize.height)
-                  .auto('format')
-                  .url()}
+              <GatsbyImage
+                image={postCoverImage}
+                style={{ transition: "all 0.3s ease-in-out 0s" }}
                 alt={props.mainImage.alt}
-              /> */}
-              <Img
-                fluid={props.mainImage.asset.fluid}
-                alt={props.mainImage.alt}
-                imgStyle={{ transition: "all 0.3s ease-in-out 0s" }}
               />
             </>
           )}

@@ -5,7 +5,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 // import Img from 'gatsby-image'
 
-import { customHeroSliderBg, customContainer, customRowm, sliderContent } from "./index.module.css";
+import { customHeroSliderBg, customContainer, customRow, sliderContent } from "./index.module.css";
 
 // function NextArrow (props) {
 //   const {onClick} = props

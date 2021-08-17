@@ -1,14 +1,15 @@
-import React from 'react'
-import {Link, useStaticQuery, graphql} from 'gatsby'
+import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // import Icon from './icon'
 // import {cn} from '../lib/helpers'
 
-import MainNav from './mainNav'
-import MobileNav from './mobileNav'
+import MainNav from "./mainNav";
+import MobileNav from "./mobileNav";
 
-const Header = ({doHideNav, doShowNav, showNav, siteTitle}) => {
-  const {site} = useStaticQuery(
+const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -20,32 +21,36 @@ const Header = ({doHideNav, doShowNav, showNav, siteTitle}) => {
                 title
                 slug
               }
-            } 
+            }
           }
         }
       }
     `
-  )
+  );
 
-  const {siteMetadata: {siteNav}} = site
+  const {
+    siteMetadata: { siteNav },
+  } = site;
 
   return (
-    <header className='header'>
-
+    <header className="header">
       {/*  Header Top Area  */}
-      <div className='header-toparea'>
-        <div className='container'>
-          <div className='row justify-content-betwween'>
-
-            <div className='col-md-6'>
+      <div className="header-toparea">
+        <div className="container">
+          <div className="row justify-content-betwween">
+            <div className="col-md-6">
               {/*  Header Logo */}
-              <Link to='/' className='header-logo'>
-                <img src='/images/logo/va-loans-for-vets-logo.jpg' alt='VA Loans For Vets' />
+              <Link to="/" className="header-logo">
+                <StaticImage
+                  src="../../images/logo/va-loans-for-vets-logo.jpg"
+                  alt="VA Loans For Vets"
+                  placeholder="none"
+                />
               </Link>
               {/* Header Logo */}
             </div>
 
-            <div className='col-md-6 d-flex align-items-stretch justify-content-end'>
+            <div className="col-md-6 d-flex align-items-stretch justify-content-end">
               {/* Movile Navigation */}
               <MobileNav
                 navStructure={siteNav}
@@ -55,7 +60,6 @@ const Header = ({doHideNav, doShowNav, showNav, siteTitle}) => {
               />
               {/* Movile Navigation */}
             </div>
-
           </div>
 
           {/* <div className='row justify-content-betwween'>
@@ -77,10 +81,9 @@ const Header = ({doHideNav, doShowNav, showNav, siteTitle}) => {
       {/*  Header Top Area */}
 
       {/*  Header Bottom Area */}
-      <div className='header-bottomarea'>
-        <div className='container'>
-          <div className='header-bottom'>
-
+      <div className="header-bottomarea">
+        <div className="container">
+          <div className="header-bottom">
             {/*  Main Navigation */}
             <MainNav navStructure={siteNav} />
             {/* Main Navigation */}
@@ -103,22 +106,20 @@ const Header = ({doHideNav, doShowNav, showNav, siteTitle}) => {
             {/* Buy Now */}
 
             {/* </div> */}
-
           </div>
         </div>
       </div>
       {/* Header Bottom Area */}
 
       {/*  Mobile Menu */}
-      <div className='mobile-menu-wrapper clearfix'>
-        <div className='container'>
-          <div className='mobile-menu' />
+      <div className="mobile-menu-wrapper clearfix">
+        <div className="container">
+          <div className="mobile-menu" />
         </div>
       </div>
       {/* Mobile Menu */}
-
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

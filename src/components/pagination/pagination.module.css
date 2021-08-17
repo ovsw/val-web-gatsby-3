@@ -1,7 +1,9 @@
-.paginationList {
+.paginationList a {
+  text-decoration: none;
 }
 
-.activeLink, .paginationList a:hover {
-  background-color: rgb(255, 55, 47)!important;
-  color: white!important;
+.activeLink,
+.paginationList a:hover {
+  background-color: rgb(255, 55, 47) !important;
+  color: white !important;
 }

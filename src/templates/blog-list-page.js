@@ -1,33 +1,41 @@
-import React from 'react'
-import {graphql} from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import RightSidebar from '../containers/content/right-sidebar'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
+  filterOutDocsPublishedInTheFuture,
+} from "../lib/helpers";
+import Container from "../components/container";
+import GraphQLErrorList from "../components/graphql-error-list";
+import SEO from "../components/seo";
+import Layout from "../containers/layout";
+import RightSidebar from "../containers/content/right-sidebar";
+import BlogPostPreviewList from "../components/blog-post-preview-list";
 
 // import {toPlainText} from '../lib/helpers'
 
-const BlogPage = props => {
-  const {data, errors, pageContext: {currentPage, numPages}} = props
+const BlogPage = (props) => {
+  const {
+    data,
+    errors,
+    pageContext: { currentPage, numPages },
+  } = props;
 
   // const page = data && data.page
-  const posts = data && data.posts
+  const posts = data && data.posts;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
-    : []
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
+    : [];
   return (
     <Layout>
-      {errors && <SEO title='GraphQL Error' />}
-      <SEO title='Blog | VA Loan Specialist | VA Loans for Vets' description='Check out our recent blog posts about VA Home Loans for Veterans and active members of the armed forces.' slug='blog' />
+      {errors && <SEO title="GraphQL Error" />}
+      <SEO
+        title="Blog | VA Loan Specialist | VA Loans for Vets"
+        description="Check out our recent blog posts about VA Home Loans for Veterans and active members of the armed forces."
+        slug="blog"
+      />
 
       {errors && (
         <Container>
@@ -35,19 +43,22 @@ const BlogPage = props => {
         </Container>
       )}
 
-      {posts &&
-      <RightSidebar title='Blog' noBlogLink>
-        <BlogPostPreviewList title='Blog Posts'
-          rootSlug='/blog'
-          nodes={postNodes}
-          currentPage={currentPage}
-          numPages={numPages} />
-      </RightSidebar>}
+      {posts && (
+        <RightSidebar title="Blog" noBlogLink>
+          <BlogPostPreviewList
+            title="Blog Posts"
+            rootSlug="/blog"
+            nodes={postNodes}
+            currentPage={currentPage}
+            numPages={numPages}
+          />
+        </RightSidebar>
+      )}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPage
+export default BlogPage;
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -90,9 +101,7 @@ export const query = graphql`
             ...SanityImage
             alt
             asset {
-              fluid(maxWidth: 800) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData(width: 800)
             }
           }
           title
@@ -104,4 +113,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

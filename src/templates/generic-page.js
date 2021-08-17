@@ -20,7 +20,7 @@ const GenericPageTemplate = (props) => {
         <SEO
           title={page.seoTitle || page.title || "Untitled"}
           description={page.seoDescription || ""}
-          noIndex={page.seoNoIndex != null}
+          noIndex={page.seoNoIndex}
           slug={page.slug.current}
         />
       )}

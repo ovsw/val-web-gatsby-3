@@ -24,7 +24,7 @@ export default ({ node }) => {
   let imageClassName = "contentImage";
 
   if (node.asset.metadata.dimensions.width < 700) {
-    fluidProps = getFluidGatsbyImage(node.asset._id, { maxWidth: 400 }, clientConfig.sanity);
+    // fluidProps = getFluidGatsbyImage(node.asset._id, { maxWidth: 400 }, clientConfig.sanity);
     imageClassName = imageClassName + " small";
   }
 
@@ -39,13 +39,13 @@ export default ({ node }) => {
       {node.caption && (
         <figure className={imageClassName}>
           {/* <Img fluid={fluidProps} alt={node.alt} /> */}
-          <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={alt} />
+          <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={node.alt} />
           <figcaption>{node.caption}</figcaption>
         </figure>
       )}
 
       {!node.caption && (
-        <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={alt} />
+        <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={node.alt} />
       )}
     </>
   );

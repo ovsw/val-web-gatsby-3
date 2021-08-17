@@ -1,41 +1,18 @@
 import React, { useState } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { Link } from "gatsby";
 // import FsLightbox from 'fslightbox-react'
+
+import { StaticImage } from "gatsby-plugin-image";
+
 import ModalVideo from "react-modal-video";
 
 // images
-// import thenNowImage from '../../images/then-now1.png'
 import uncleSamImage from "../../images/uncle-sam.jpg";
-// import VideoBgImage from '../../images/jimmy-vercellino-interview-good-morning-arizona.jpg'
-
 import "../../../node_modules/react-modal-video/css/modal-video.min.css";
 
 const AboutArea = () => {
   const [videoToggler, setvideoToggler] = useState(false);
 
-  const { thenNowImg, videoBgImage } = useStaticQuery(
-    graphql`
-      query {
-        thenNowImg: file(relativePath: { eq: "then-now1.png" }) {
-          childImageSharp {
-            fixed(width: 370) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        videoBgImage: file(
-          relativePath: { eq: "jimmy-vercellino-interview-on-good-morning-arizona.jpg" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 640) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `
-  );
   return (
     <div className="about-area in-section section-padding-top-lg bg-white">
       <div className="container custom-container">
@@ -67,17 +44,12 @@ const AboutArea = () => {
             className="col-xl-6 col-lg-6 d-flex align-items-center justify-content-center py-5"
             style={{ background: `url(${uncleSamImage}) no-repeat center center` }}
           >
-            {/* <img src={thenNowImage} alt='then-now' /> */}
-            <Img
-              fixed={thenNowImg.childImageSharp.fixed}
+            <StaticImage
+              src="../../images/then-now1.png"
+              placeholder="none"
+              width={370}
               alt="Jimmy Vercellino, then as a Marine and now as a VA Loan Specialist"
             />
-            {/* <div className='heightmatch'>
-               <div className='in-videobox'>
-                <img src='/images/other/videbox-image-1.jpg' alt='man with umbrella' />
-                <a href='#' data-video-id='136709781' data-channel='vimeo' className='in-videobutton in-videobox-button'><i className='zmdi zmdi-play' /></a>
-              </div>
-            </div> */}
           </div>
 
           <div
@@ -85,9 +57,11 @@ const AboutArea = () => {
             style={{ cursor: "pointer" }}
             onClick={() => setvideoToggler(!videoToggler)}
           >
-            <Img
-              fluid={videoBgImage.childImageSharp.fluid}
-              alt="Jimmy"
+            <StaticImage
+              src="../../images/jimmy-vercellino-interview-on-good-morning-arizona.jpg"
+              alt="Jimmy Vercellino giving interview on the Good Morning Arizona TV show"
+              placeholder="none"
+              width={640}
               className="w-100"
               style={{ height: "100%" }}
             />

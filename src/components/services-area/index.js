@@ -43,7 +43,7 @@ const ServicesArea = ({sectionTitle = 'Missing Title', sectionSubtitle, cardsCon
         </div>
 
         <div className='row justify-content-center'>
-          <Link to='/va-loan-faq/ (/obtaining-a-va-home-loan/' type='submit' className='in-button in-button-theme mt-5'>Learn More</Link>
+          <Link to='/obtaining-a-va-home-loan/' type='submit' className='in-button in-button-theme mt-5'>Learn More</Link>
         </div>
 
       </div>

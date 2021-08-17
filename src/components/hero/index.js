@@ -5,7 +5,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 // import Img from 'gatsby-image'
 
-import styles from "./index.module.css";
+import { customHeroSliderBg, customContainer, customRowm, sliderContent } from "./index.module.css";
 
 // function NextArrow (props) {
 //   const {onClick} = props
@@ -58,18 +58,18 @@ const Hero = () => {
       <div className="heroslider ">
         <BackgroundImage
           Tag="div"
-          className={`heroSliderBg d-flex align-items-center ${styles.customHeroSliderBg}`}
+          className={`heroSliderBg d-flex align-items-center ${customHeroSliderBg}`}
           fluid={heroBG.childImageSharp.fluid}
           backgroundColor={`#163963`}
           loading="eager"
           // fadeIn={false}
         >
-          {/* <div className={`heroSliderBg d-flex align-items-center ${styles.customHeroSliderBg}`} style={{backgroundImage: "url('/images/bg/background-image-3s.jpg')"}}>data-secondary-overlay='8' */}
+          {/* <div className={`heroSliderBg d-flex align-items-center ${customHeroSliderBg}`} style={{backgroundImage: "url('/images/bg/background-image-3s.jpg')"}}>data-secondary-overlay='8' */}
 
-          <div className={`container ${styles.customContainer}`}>
-            <div className={`row ${styles.customRow}`}>
+          <div className={`container ${customContainer}`}>
+            <div className={`row ${customRow}`}>
               <div className="col-lg-10">
-                <div className={`heroslider-content ${styles.sliderContent}`}>
+                <div className={`heroslider-content ${sliderContent}`}>
                   <h1>
                     <span>
                       From Marine to <br />

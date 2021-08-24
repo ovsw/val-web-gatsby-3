@@ -1,7 +1,9 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
+
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 import SocialLinks from "../components/social-links";
 
@@ -11,24 +13,17 @@ const Footer = () => {
       query {
         footerBg: file(relativePath: { eq: "bg/footer-bg.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-        vietnamLogo: file(relativePath: { eq: "Vietnam-War-Commemoration-Logo.png" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 190) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
+            gatsbyImageData(width: 1400)
           }
         }
       }
     `
   );
 
-  const backgroundFluidImageStack = [
-    footerBg.childImageSharp.fluid,
+  const footerBgImage = getImage(footerBg);
+
+  const backgroundImageStack = [
+    footerBgImage,
     `linear-gradient(rgba(3, 27, 56, 0.8), rgba(3, 27, 56, 0.8))`,
   ].reverse();
 
@@ -77,10 +72,10 @@ const Footer = () => {
       {/* // Footer Contact Area */}
 
       {/* Footer Inner */}
-      <BackgroundImage
+      <BgImage
         Tag="div"
         className="footer-inner"
-        fluid={backgroundFluidImageStack}
+        image={backgroundImageStack}
         backgroundColor={`#163963`}
       >
         {/* <div className='' data-secondary-overlay='8'> */}
@@ -241,6 +236,7 @@ const Footer = () => {
                       src="../images/logo/ico2.png"
                       alt="NML Consumer Access Logo"
                       placeholder="none"
+                      as="span"
                     />
                   </a>
                   <StaticImage
@@ -248,6 +244,7 @@ const Footer = () => {
                     alt="Equal Housing Opportunity Logo"
                     title="Equal Housing Opportunity"
                     placeholder="none"
+                    as="span"
                   />
                 </p>
               </div>
@@ -284,7 +281,7 @@ const Footer = () => {
           </div>
         </div>
         {/* // Footer Copyright Area */}
-      </BackgroundImage>
+      </BgImage>
       {/* // Footer Inner */}
     </footer>
   );

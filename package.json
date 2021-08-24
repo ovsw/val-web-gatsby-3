@@ -38,6 +38,7 @@
     "gatsby-plugin-sitemap": "^4.7.0",
     "gatsby-source-filesystem": "^3.11.0",
     "gatsby-transformer-sharp": "^3.11.0",
+    "gbimage-bridge": "^0.1.4",
     "get-youtube-id": "^1.0.1",
     "intersection-observer": "^0.10.0",
     "react": "^17.0.2",

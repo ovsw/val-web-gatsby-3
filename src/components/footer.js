@@ -13,7 +13,7 @@ const Footer = () => {
       query {
         footerBg: file(relativePath: { eq: "bg/footer-bg.jpg" }) {
           childImageSharp {
-            gatsbyImageData(width: 1400)
+            gatsbyImageData(width: 1400, quality: 80)
           }
         }
       }

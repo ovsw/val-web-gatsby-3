@@ -1,3 +1,6 @@
+// gatsby cloud post preview to trigger deploy on content change:
+// https://webhook.gatsbyjs.com/hooks/data_source/94d47276-df4b-4d9d-b368-63cc85cdf361
+
 // Load variables from `.env` as soon as possible
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "development"}`,
@@ -213,7 +216,6 @@ module.exports = {
                 siteUrl
               }
             }
-
             allSitePage {
               edges {
                 node {

@@ -44,41 +44,41 @@ const IndexPage = (props) => {
 
   const obtainLoanCardsContent = [
     {
-      title: "1 - Choose your dream home",
-      description:
-        "You select a Home and discuss the purchase with the seller or selling agent. Sign a purchase contract conditioned on approval of your VA home loan",
-      icon: "flaticon-life-insurence",
-    },
-    {
-      title: "2 - Partner with a trusted lender",
+      title: "1 - Partner with a trusted lender",
       description:
         "You select a lender and present them with your Certificate of Eligibility and complete a loan application ",
       icon: "flaticon-life-insurence",
     },
     {
-      title: "3 - Bring in a licensed appraiser",
+      title: "2 - Find Your Dream Home",
+      description:
+        "You select a Home and discuss the purchase with the seller or selling agent. Sign a purchase contract conditioned on approval of your VA home loan",
+      icon: "flaticon-life-insurence",
+    },
+    {
+      title: "3 - Order a VA Appraiser",
       description:
         "The lender will develop all credit and income information. They will also request VA to assign a licensed appraiser to determine the reasonable value for the property. A Certificate of Reasonable Value will be issued. Note: You may be required to pay for the credit report and appraisal unless the seller agrees to pay.",
       icon: "flaticon-life-insurence",
     },
     {
-      title: "4 - Wait for the loan decision",
+      title: "4 - Receive a Loan Approval",
       description:
         "The lender will let you know the decision on the loan. You should be approved if the established value and your credit and income are acceptable",
       icon: "flaticon-life-insurence",
     },
     {
-      title: "5 - Celebrate the loan closing",
+      title: "5 - Celebrate the Loan Closing",
       description:
         "You (and spouse) attend the loan closing. The lender or closing attorney will explain the loan terms and requirements as well as where and how to make the monthly payments. Sign the note, mortgage, and other related papers.",
       icon: "flaticon-life-insurence",
     },
-    {
-      title: "6 - Receive the guaranty",
-      description:
-        "The loan is sent to VA for guaranty. Your Certificate of Eligibility is annotated to reflect the use of entitlement and returned to you.",
-      icon: "flaticon-life-insurence",
-    },
+    // {
+    //   title: "6 - Receive the guaranty",
+    //   description:
+    //     "The loan is sent to VA for guaranty. Your Certificate of Eligibility is annotated to reflect the use of entitlement and returned to you.",
+    //   icon: "flaticon-life-insurence",
+    // },
   ];
   const faqContent = [
     {

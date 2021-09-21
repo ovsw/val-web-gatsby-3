@@ -5103,6 +5103,14 @@ select {
   color: red;
 }
 
+.blog-content h2, .blog-content h3 {
+  margin-top: 1.7em;
+  margin-bottom: 1.2em;
+}
+.blog-content h2:first-child {
+  margin-top: 0;
+}
+
 .blog-content a,.blog-content a:visited {
   text-decoration: underline;
   color: #e42d2d;

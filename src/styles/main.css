@@ -2026,7 +2026,7 @@ select {
  * Breadcrumb
  */
 .in-breadcrumb {
-  padding: 90px 0;
+  padding: 12rem 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .in-breadcrumb {

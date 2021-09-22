@@ -32,7 +32,7 @@ const GenericPageTemplate = (props) => {
       )}
 
       {page && (
-        <RightSidebar title={page.title} path={location.pathname}>
+        <RightSidebar title={page.title} path={location.pathname} headerImage={page.image}>
           <GenericPage {...page} />
         </RightSidebar>
       )}
@@ -52,6 +52,12 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      image {
+        alt
+        asset {
+          gatsbyImageData(width: 1800)
+        }
       }
       _rawBody(resolveReferences: { maxDepth: 5 })
     }

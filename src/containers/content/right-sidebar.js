@@ -5,10 +5,10 @@ import Sidebar from '../../components/sidebar'
 
 // import styles from './blog-post.module.css'
 
-function GenericPage ({title, children, path, noBlogLink}) {
+function GenericPage ({title, children, path, noBlogLink, headerImage}) {
   return (
     <>
-      <InnerPageHeader title={title} />
+      <InnerPageHeader title={title} headerImage={headerImage} />
 
       <main className='page-content'>
 

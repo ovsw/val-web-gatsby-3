@@ -44,7 +44,7 @@ const IndexPage = (props) => {
 
   const obtainLoanCardsContent = [
     {
-      title: "1 - Partner with a trusted lender",
+      title: "1 - Partner with a Trusted Lender",
       description:
         "You select a lender and present them with your Certificate of Eligibility and complete a loan application ",
       icon: "flaticon-life-insurence",

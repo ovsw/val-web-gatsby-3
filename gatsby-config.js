@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         title: "Apply",
-        slug: "https://connect.google.com/",
+        slug: "https://connect.valoansforvets.com/",
         children: [],
       },
       {

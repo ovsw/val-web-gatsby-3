@@ -48,9 +48,12 @@ const Hero = () => {
                     to start the VA Home Loan Journey.
                   </p>
                   <div className="heroslider-buttonholder">
-                    <Link to="/apply/" className="in-button in-button-theme">
+                    <a
+                      href="https://connect.valoansforvets.com/"
+                      className="in-button in-button-theme"
+                    >
                       Apply Now
-                    </Link>
+                    </a>
                     <Link to="/my-story/" className="in-button in-button-colorwhite">
                       My Story
                     </Link>

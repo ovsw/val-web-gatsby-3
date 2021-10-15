@@ -111,7 +111,7 @@ const Footer = () => {
                 <div className="single-widget widget-info">
                   <ul className="footer-nav">
                   <li>
-                      <a href="https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714">Application Login</a>
+                      <a href="https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714" target="_blank" rel="noopener noreferrer">Application Login</a>
                     </li>
                     <li>
                       <Link to="/apply/">VA Application Process</Link>

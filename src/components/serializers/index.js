@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from 'gatsby'
 import Figure from './Figure'
 import getYouTubeId from 'get-youtube-id'
+import isAbsoluteURL from 'is-absolute-url'
+
 import YouTube from 'react-youtube'
 import Table from './Table'
 import Embed from './Embed'
@@ -27,15 +29,15 @@ const serializers = {
     iframeEmbed: Embed
   },
   marks: {
-    // button: props => {
-    //   const url = props.mark.href
-    //   const isExternal = isAbsoluteURL(url)
-    //   if (isExternal) {
-    //     return <a href={url} rel='noopener noreferrer' target='_blank' className='contentButton'><span>{props.children}<GoLinkExternal /></span></a>
-    //   } else {
-    //     return <Link to={url} activeClassName='active' className='contentButton'><span>{props.children}</span></Link>
-    //   }
-    // },
+    button: props => {
+      const url = props.mark.href
+      const isExternal = isAbsoluteURL(url)
+      if (isExternal) {
+        return <a href={url} rel='noopener noreferrer' target='_blank' className='in-button in-button-theme'><span>{props.children}</span></a>
+      } else {
+        return <Link to={url} activeClassName='active' className='in-button in-button-theme'><span>{props.children}</span></Link>
+      }
+    },
     // link: ({mark, children}) => {
     //   // Read https://css-tricks.com/use-target_blank/
     //   const {blank, href} = mark

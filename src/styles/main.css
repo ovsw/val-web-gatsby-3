@@ -2,6 +2,7 @@
 
 :root {
   --main-accentColor: #ff372f;
+  --main-accentColor-Dark: #cf120b;
 }
 
 /**************************************************************
@@ -1834,6 +1835,7 @@ select {
 .in-button,
 .in-button:link,
 .in-button:visited {
+  text-decoration: none;
   outline: none;
   transition: all 0.3s ease-in-out 0s;
   position: relative;
@@ -1853,7 +1855,7 @@ select {
 .in-button:hover,
 .in-button:link:hover,
 .in-button:visited:hover {
-  background: var(--main-accentColor);
+  background: var(--main-accentColor-Dark);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   color: #ffffff;
 }
@@ -1861,6 +1863,12 @@ select {
 .in-button:link.in-button-theme,
 .in-button:visited.in-button-theme {
   background: var(--main-accentColor);
+  color: #ffffff;
+}
+.in-button.in-button-theme:hover,
+.in-button:link.in-button-theme:hover,
+.in-button:visited.in-button-theme:hover {
+  background: var(--main-accentColor-Dark);
   color: #ffffff;
 }
 .in-button.in-button-colorwhite,
@@ -5120,6 +5128,7 @@ select {
   display: block;
   margin-bottom: 2rem;
 }
+
 /*****************************************/
 /*>>>>>>>>>>>>>>>(THE END)<<<<<<<<<<<<<<<*/
 /*****************************************/

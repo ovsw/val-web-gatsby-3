@@ -1,12 +1,12 @@
-@import '../../styles/custom-properties.css';
-@import '../../styles/custom-media.css';
+@import "../../styles/custom-properties.css";
+@import "../../styles/custom-media.css";
 
 .mainNav {
   display: none;
 }
 
 @media (--media-min-large) {
-  .mainNav{
-    display:block;
+  .mainNav {
+    display: block;
   }
 }

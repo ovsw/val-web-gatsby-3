@@ -98,8 +98,9 @@ const Footer = () => {
                     <br /> NMLS #452955.
                   </p>
                   <p>
-                    3602 E Campbell Ave,<br /> Phoenix, AZ 85018 <br />
-                    Phone: <a href='tel:602-908-5849'>602-908-5849</a> | Fax: 480-569-1363
+                    3602 E Campbell Ave,
+                    <br /> Phoenix, AZ 85018 <br />
+                    Phone: <a href="tel:602-908-5849">602-908-5849</a> | Fax: 480-569-1363
                   </p>
                   <ul className="footer-socialicons">
                     <SocialLinks />
@@ -110,8 +111,14 @@ const Footer = () => {
               <div className="col-lg-3 col-md-3">
                 <div className="single-widget widget-info">
                   <ul className="footer-nav">
-                  <li>
-                      <a href="https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714" target="_blank" rel="noopener noreferrer">Application Login</a>
+                    <li>
+                      <a
+                        href="https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Application Login
+                      </a>
                     </li>
                     <li>
                       <Link to="/apply/">VA Application Process</Link>

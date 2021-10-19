@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby";
 const InnerPageHeader = ({ title, headerImage }) => {
   // console.log(headerImage);
 
-  const  { defaultHeaderBgImage } = useStaticQuery(
+  const { defaultHeaderBgImage } = useStaticQuery(
     graphql`
       query {
         defaultHeaderBgImage: file(relativePath: { eq: "bg/breadcrumb-bg-1.jpg" }) {
@@ -19,7 +19,7 @@ const InnerPageHeader = ({ title, headerImage }) => {
       }
     `
   );
-  const defaultHeaderBgImg = getImage(defaultHeaderBgImage)
+  const defaultHeaderBgImg = getImage(defaultHeaderBgImage);
 
   const customImage = headerImage ? true : false;
 
@@ -40,19 +40,13 @@ const InnerPageHeader = ({ title, headerImage }) => {
         </div>
       </div>
     </div>
-  )
+  );
 
   const bgHeaderBgImage = headerImage ? getImage(headerImage.asset) : null;
-  
-  const customHeaderBgImageStack = headerImage ? [
-    bgHeaderBgImage,
-    `linear-gradient(rgba(3, 27, 56, 0.7), rgba(3, 27, 56, 0.7))`,
-  ].reverse() 
-  : [
-    defaultHeaderBgImg,
-    `linear-gradient(rgba(3, 27, 56, 0.7), rgba(3, 27, 56, 0.7))`,
-  ].reverse()
-  
+
+  const customHeaderBgImageStack = headerImage
+    ? [bgHeaderBgImage, `linear-gradient(rgba(3, 27, 56, 0.7), rgba(3, 27, 56, 0.7))`].reverse()
+    : [defaultHeaderBgImg, `linear-gradient(rgba(3, 27, 56, 0.7), rgba(3, 27, 56, 0.7))`].reverse();
 
   return (
     <BgImage

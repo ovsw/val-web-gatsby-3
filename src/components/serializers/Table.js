@@ -1,20 +1,20 @@
-import React from 'react'
+import React from "react";
 
-export default ({node}) => {
+export default ({ node }) => {
   return (
     <table>
       <tbody>
         {node.generictable.rows.map((row, i) => {
-          const CellTag = i === 0 ? 'th' : 'td'
+          const CellTag = i === 0 ? "th" : "td";
           return (
             <tr key={row._key}>
-              {row.cells.map((cellText, i) =>
+              {row.cells.map((cellText, i) => (
                 <CellTag key={i}>{cellText}</CellTag>
-              )}
+              ))}
             </tr>
-          )
+          );
         })}
       </tbody>
     </table>
-  )
-}
+  );
+};

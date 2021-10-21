@@ -175,9 +175,117 @@ async function createGenericPages(graphql, actions, reporter) {
   });
 }
 
+async function createVideoResourcePages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityVrSection {
+        edges {
+          node {
+            id
+            seoNoIndex
+            title
+            slug {
+              current
+            }
+            subSections {
+              id
+              seoNoIndex
+              title
+              slug {
+                current
+              }
+              videoRefs {
+                id
+                seoNoIndex
+                title
+                slug {
+                  current
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const vrSectionPageEdges = (result.data.allSanityVrSection || {}).edges || [];
+
+  vrSectionPageEdges.forEach((edge, index) => {
+    // iterate through all main VR Section pages
+
+    // grab the id, slug, seoNoindex, just like the other pages
+    // plus the 'subSections' attr which contains the subsections we'll be iterating through next
+    const { id, slug = {}, seoNoIndex, subSections } = edge.node;
+
+    // we keep the ID of the main VR section to pass down to the Sub-Section
+    const mainVrSectionId = id;
+
+    // don't forget to add /video/ prefix to slug
+    const mainSectionPagePath = `/video/${slug.current}/`;
+
+    reporter.info(`Creating main VR Section page: ${mainSectionPagePath}`);
+
+    // Create the main VR Section pages (there should be just 2)
+    createPage({
+      path: mainSectionPagePath,
+      component: require.resolve("./src/templates/generic-page.js"),
+      context: { id, seoNoIndex },
+    });
+
+    // on to Sub-Sections
+
+    subSections.forEach((subSection, index) => {
+      // iterate through all the Sub-Section pages in this main Section
+
+      // grab the id, slug, seoNoindex, just like the other pages
+      // plus the 'videoRefs' attr which contains the subsections we'll be iterating through next
+      const { id, slug = {}, seoNoIndex, videoRefs } = subSection;
+      const subSectionId = id;
+      const subSectionSlug = slug;
+
+      // don't forget to add /video/ prefix to slug
+      const subSectionPagePath = `/video/${slug.current}/`;
+
+      reporter.info(`Creating VR Sub-Section page: ${subSectionPagePath}`);
+
+      // Create the VR Sub-Section pages
+      createPage({
+        path: subSectionPagePath,
+        component: require.resolve("./src/templates/generic-page.js"),
+        context: { id, seoNoIndex, mainVrSectionId },
+      });
+
+      // on to videos in this sub-section
+      videoRefs.forEach((videoRef, index) => {
+        // iterate through all the video pages in this sub-section
+
+        // grab the id, slug, seoNoindex, just like the other pages
+        const { id, slug = {}, seoNoIndex } = videoRef;
+
+        // don't forget to add /video/ prefix, and Sub-Category slug to the video's slug
+        const videoPagePath = `/video/${subSectionSlug.current}/${slug.current}/`;
+
+        reporter.info(`Creating VR Video page: ${videoPagePath}`);
+
+        // Create the VR Sub-Section pages
+        createPage({
+          path: videoPagePath,
+          component: require.resolve("./src/templates/vr-video-page.js"),
+          context: { id, seoNoIndex, subSectionId },
+        });
+      });
+    });
+  });
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPages(graphql, actions, reporter);
   await createGenericPages(graphql, actions, reporter);
+  await createVideoResourcePages(graphql, actions, reporter);
 
   const { createRedirect } = actions;
 

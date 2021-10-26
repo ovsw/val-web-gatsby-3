@@ -43,16 +43,13 @@ const Hero = () => {
                     </span>{" "}
                     Jimmy Vercellino
                   </h1>
-                  <p>
-                    I want to be your trusted advisor and get you homeownership. <br /> Click below
-                    to start the VA Home Loan Journey.
-                  </p>
+                  <p>Start Your VA Home Journey</p>
                   <div className="heroslider-buttonholder">
                     <a
                       href="https://connect.valoansforvets.com/"
                       className="in-button in-button-theme"
                     >
-                      Apply Now
+                      Get Started
                     </a>
                     <Link to="/my-story/" className="in-button in-button-colorwhite">
                       My Story

@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         title: "Apply",
-        slug: "https://connect.valoansforvets.com/",
+        slug: "https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714",
         children: [],
       },
       {

@@ -10,7 +10,7 @@ const Sidebar = ({ loanCta, storyCta, blogCta, path, noBlogLink }) => {
       <div className="row widgets right-sidebar">
         {!(path === "/apply/" || path === "/apply") && (
           <CTA
-            title="Apply: VA Loan"
+            title="Get Started"
             text="I am here to help you get your dream home. Click here to start the VA Loan application process."
             url="https://connect.valoansforvets.com/"
           />

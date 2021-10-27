@@ -232,7 +232,7 @@ async function createVideoResourcePages(graphql, actions, reporter) {
     // Create the main VR Section pages (there should be just 2)
     createPage({
       path: mainSectionPagePath,
-      component: require.resolve("./src/templates/generic-page.js"),
+      component: require.resolve("./src/templates/vr-section-page.js"),
       context: { id, seoNoIndex },
     });
 
@@ -285,7 +285,7 @@ async function createVideoResourcePages(graphql, actions, reporter) {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPages(graphql, actions, reporter);
   await createGenericPages(graphql, actions, reporter);
-  await createVideoResourcePages(graphql, actions, reporter);
+  // await createVideoResourcePages(graphql, actions, reporter);
 
   const { createRedirect } = actions;
 

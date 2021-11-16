@@ -26,8 +26,10 @@ export default function HTML(props) {
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
 
         {props.postBodyComponents}
-        {/* <script dangerouslySetInnerHTML={{__html: `var _userway_config = {account: '4AUrPHhPpd'}`}} />
-        <script type='text/javascript' src='https://cdn.userway.org/widget.js' /> */}
+        <script
+          dangerouslySetInnerHTML={{ __html: `var _userway_config = {account: '4AUrPHhPpd'}` }}
+        />
+        <script type="text/javascript" src="https://cdn.userway.org/widget.js" />
       </body>
     </html>
   );

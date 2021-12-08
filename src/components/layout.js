@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/icons.css";
 import "../styles/slick.css";
 import "../styles/main.css";
+import "../styles/tailwind.css";
 
 const Layout = ({ children, doHideNav, doShowNav, showNav, siteTitle }) => (
   <div id="wrapper" className="wrapper">

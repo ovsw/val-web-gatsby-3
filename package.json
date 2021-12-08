@@ -26,6 +26,8 @@
     "react-helmet": "^6.0.0"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
     "autoprefixer": "^10.4.0",
     "gatsby": "^3.11.1",
     "gatsby-background-image": "^1.1.1",

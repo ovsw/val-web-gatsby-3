@@ -10,7 +10,7 @@ const Hero = () => {
   const { heroBG } = useStaticQuery(
     graphql`
       query {
-        heroBG: file(relativePath: { eq: "bg/background-image-3s.jpg" }) {
+        heroBG: file(relativePath: { eq: "bg/background-image-4.jpg" }) {
           childImageSharp {
             gatsbyImageData(width: 1200, quality: 80)
           }
@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="heroslider ">
+      <div className="heroslider">
         <BgImage
           Tag="div"
           className={`heroSliderBg d-flex align-items-center ${customHeroSliderBg}`}

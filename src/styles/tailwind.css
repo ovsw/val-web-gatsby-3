@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .activeVrSidebarSubCategory {
+    @apply !bg-blue-500 !text-white;
+  }
   .activeVrSidebarLink {
-    @apply !text-red-500;
+    @apply !text-red-500 font-bold;
   }
 }

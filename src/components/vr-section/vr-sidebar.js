@@ -66,33 +66,66 @@ const VrSidebar = ({ sectionSlug, subSectionSlug }) => {
   }
 
   return (
-    <nav className="space-y-10 divide-y-reverse">
-      <h1>SECTION: {sectionSlug}</h1>
+    <nav className="">
+      {/* <h1>SECTION: {sectionSlug}</h1>
       <h1>SUB-SECTION: '{subSectionSlug}'</h1>
-      ************
-      {vrCategories.map(({ node: category }, i) => {
+      ************ */}
+      {vrCategories.map(({ node: vrSection }, i) => {
         return (
-          <div key={i} className=" font-bold">
-            <Link to={`/video/${category.slug.current}`}>{category.title}</Link>
-            <ul className="divide-y font-normal">
-              {category.subSections.map((subSection, i) => {
-                return (
-                  <li key={i} className="pl-4 py-3">
-                    <Link
-                      to={`/video/${subSection.slug.current}`}
-                      partiallyActive={true}
-                      // activeStyle={{ color: "red" }}
-                      activeClassName="activeVrSidebarLink"
-                      className="text-blue-500"
-                    >
-                      {/* <span className={subSectionSlug == subSection.slug.current ? "hidden" : ""}> */}
-                      {subSection.title}
-                      {/* </span> */}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+          <div key={i}>
+            {/* if the category being looped is the current one */}
+            {sectionSlug === vrSection.slug.current && (
+              // show the menu for it in the sidebar
+
+              // title
+              <div key={i} className="">
+                <Link
+                  to={`/video/${vrSection.slug.current}`}
+                  className="mx-3 block font-bold text-lg mb-4"
+                >
+                  {vrSection.title}
+                </Link>
+
+                {/* sub-sections START */}
+                <div className="shadow-xl">
+                  <ul className="font-normal shadow-sm">
+                    {vrSection.subSections.map((subSection, i) => {
+                      return (
+                        <li key={i} className="">
+                          <Link
+                            to={`/video/${subSection.slug.current}`}
+                            partiallyActive={true}
+                            // activeStyle={{ color: "red" }}
+                            activeClassName="!bg-red-500 !text-white"
+                            className="block font-bold"
+                          >
+                            {/* <span className={subSectionSlug == subSection.slug.current ? "hidden" : ""}> */}
+                            <span className="pl-4 pr-4 py-2 block">{subSection.title}</span>
+                          </Link>
+                          <ul className="divide-y bg-slate-100">
+                            {subSection.videoRefs.map((videoPage, i) => {
+                              console.log("video Item:", videoPage);
+                              return (
+                                <li key={i} className="pl-10 pr-4 py-2">
+                                  <Link
+                                    activeClassName="activeVrSidebarLink"
+                                    to={`/video/${subSection.slug.current}/${videoPage.slug.current}`}
+                                  >
+                                    {videoPage.title}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                          {/* </span> */}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                {/* END sub-sections */}
+              </div>
+            )}
           </div>
         );
       })}

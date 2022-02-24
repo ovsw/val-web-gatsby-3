@@ -10,6 +10,7 @@ import Embed from "./Embed";
 
 const YTopts = {
   width: "100%",
+  height: "100%",
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     modestbranding: 1,
@@ -24,7 +25,13 @@ const serializers = {
     youtube: ({ node }) => {
       const { url } = node;
       const id = getYouTubeId(url);
-      return <YouTube videoId={id} opts={YTopts} className=" aspect-video " />;
+      return (
+        <YouTube
+          videoId={id}
+          opts={YTopts}
+          containerClassName="mx-auto max-w-3xl aspect-video w-full"
+        />
+      );
     },
     mytable: Table,
     iframeEmbed: Embed,

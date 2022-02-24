@@ -255,7 +255,7 @@ async function createVideoResourcePages(graphql, actions, reporter) {
       // Create the VR Sub-Section pages
       createPage({
         path: subSectionPagePath,
-        component: require.resolve("./src/templates/generic-page.js"),
+        component: require.resolve("./src/templates/vr-subSection-page.js"),
         context: { id, seoNoIndex, mainVrSectionId },
       });
 
@@ -285,7 +285,7 @@ async function createVideoResourcePages(graphql, actions, reporter) {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPages(graphql, actions, reporter);
   await createGenericPages(graphql, actions, reporter);
-  // await createVideoResourcePages(graphql, actions, reporter);
+  await createVideoResourcePages(graphql, actions, reporter);
 
   const { createRedirect } = actions;
 
@@ -319,4 +319,55 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       isPermanent,
     });
   });
+};
+
+// this re-creates the inverse relations between vrVideo -> vrSubCategory -> vrCategory
+// this is needed to be able to find out which category a video belongs to,
+// in order to display the correct section in the sidebar navigation
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    SanityVrSubSection: {
+      section: {
+        type: ["SanityVrSection"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            type: "SanityVrSection",
+            query: {
+              filter: {
+                subSections: {
+                  elemMatch: {
+                    _id: {
+                      eq: source._id,
+                    },
+                  },
+                },
+              },
+            },
+          });
+        },
+      },
+    },
+    SanityVrVideo: {
+      subSection: {
+        type: ["SanityVrSubSection"],
+        resolve(source, args, context, info) {
+          return context.nodeModel.runQuery({
+            type: "SanityVrSubSection",
+            query: {
+              filter: {
+                videoRefs: {
+                  elemMatch: {
+                    _id: {
+                      eq: source._id,
+                    },
+                  },
+                },
+              },
+            },
+          });
+        },
+      },
+    },
+  };
+  createResolvers(resolvers);
 };

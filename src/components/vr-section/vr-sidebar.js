@@ -23,7 +23,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 // import MainNav from "./mainNav";
 // import MobileNav from "./mobileNav";
 
-const VrSidebar = ({ sectionSlug, subSectionSlug }) => {
+const VrSidebar = ({ section, subSection }) => {
   const { allSanityVrSection } = useStaticQuery(
     graphql`
       query VrNavQuery {
@@ -60,6 +60,9 @@ const VrSidebar = ({ sectionSlug, subSectionSlug }) => {
   );
 
   const vrCategories = allSanityVrSection.edges;
+
+  const sectionSlug = section.slug.current;
+  const subSectionSlug = subSection.slug.current;
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");

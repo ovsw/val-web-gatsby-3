@@ -38,8 +38,8 @@ const GenericPageTemplate = (props) => {
       {page && (
         <VrLayout
           title={page.title}
-          sectionSlug={page.subSection[0].section[0].slug.current}
-          subSectionSlug={page.subSection[0].slug.current}
+          section={page.subSection[0].section[0]}
+          subSection={page.subSection[0]}
           image={page.image}
         >
           {page._rawBody && (

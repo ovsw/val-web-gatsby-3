@@ -34,12 +34,7 @@ const GenericPageTemplate = (props) => {
       )}
 
       {page && (
-        <VrLayout
-          title={page.title}
-          sectionSlug={page.section[0].slug.current}
-          subSectionSlug={page.slug.current}
-          image={page.image}
-        >
+        <VrLayout title={page.title} section={page.section[0]} subSection={page} image={page.image}>
           <ul
             role="list"
             className="grid pt-8 grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"

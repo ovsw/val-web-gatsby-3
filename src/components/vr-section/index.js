@@ -27,7 +27,7 @@ import InnerPageHeader from "../inner-page-header";
 
 import VrSidebar from "./vr-sidebar";
 
-const VrLayout = ({ title, sectionSlug, subSectionSlug = "", image, children }) => {
+const VrLayout = ({ title, section, subSection = "", image, children }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -61,7 +61,7 @@ const VrLayout = ({ title, sectionSlug, subSectionSlug = "", image, children }) 
 
       <section className="mx-auto max-w-[94rem] flex">
         <div className="w-max min-w-[18rem] p-8">
-          <VrSidebar sectionSlug={sectionSlug} subSectionSlug={subSectionSlug} />
+          <VrSidebar section={section} subSection={subSection} />
         </div>
         <div className=" flex-1 pt-8">{children}</div>
       </section>

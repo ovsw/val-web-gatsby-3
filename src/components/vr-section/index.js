@@ -63,7 +63,7 @@ const VrLayout = ({ title, sectionSlug, subSectionSlug = "", image, children }) 
         <div className="w-max min-w-[18rem] p-8">
           <VrSidebar sectionSlug={sectionSlug} subSectionSlug={subSectionSlug} />
         </div>
-        <div className=" flex-1">{children}</div>
+        <div className=" flex-1 pt-8">{children}</div>
       </section>
     </>
   );

@@ -81,7 +81,7 @@ const VrSidebar = ({ sectionSlug, subSectionSlug }) => {
               <div key={i} className="">
                 <Link
                   to={`/video/${vrSection.slug.current}`}
-                  className="mx-3 block font-bold text-lg mb-4"
+                  className="mr-3 block font-bold text-lg mb-2"
                 >
                   {vrSection.title}
                 </Link>

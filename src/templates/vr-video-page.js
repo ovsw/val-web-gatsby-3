@@ -42,7 +42,11 @@ const GenericPageTemplate = (props) => {
           subSectionSlug={page.subSection[0].slug.current}
           image={page.image}
         >
-          {page._rawBody && <PortableText blocks={page._rawBody} />}
+          {page._rawBody && (
+            <div className="prose prose-xl max-w-prose prose-slate">
+              <PortableText blocks={page._rawBody} />
+            </div>
+          )}
         </VrLayout>
       )}
     </Layout>

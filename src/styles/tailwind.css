@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .activeVrSidebarLink {
+    @apply !text-red-500;
+  }
+}

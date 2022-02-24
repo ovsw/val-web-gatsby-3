@@ -24,7 +24,7 @@ const serializers = {
     youtube: ({ node }) => {
       const { url } = node;
       const id = getYouTubeId(url);
-      return <YouTube videoId={id} opts={YTopts} />;
+      return <YouTube videoId={id} opts={YTopts} className=" aspect-video " />;
     },
     mytable: Table,
     iframeEmbed: Embed,

@@ -6,6 +6,7 @@ import GenericPage from "../components/generic-page";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import RightSidebar from "../containers/content/right-sidebar";
+import { Link } from "gatsby";
 
 // import {toPlainText} from '../lib/helpers'
 
@@ -36,7 +37,11 @@ const GenericPageTemplate = (props) => {
       {page && (
         <RightSidebar title={page.title} path={location.pathname} headerImage={page.image}>
           {page.subSections.map((subSection, index) => {
-            return <h2>{subSection.title}</h2>;
+            return (
+              <h2>
+                <Link to={`/video/${subSection.slug.current}`}>{subSection.title}</Link>
+              </h2>
+            );
           })}
           <GenericPage {...page} />
         </RightSidebar>
@@ -57,6 +62,12 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      image {
+        alt
+        asset {
+          gatsbyImageData(width: 1800)
+        }
       }
       subSections {
         id

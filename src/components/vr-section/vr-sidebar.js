@@ -84,7 +84,7 @@ const VrSidebar = ({ section, subSection }) => {
               <div key={i} className="">
                 <Link
                   to={`/video/${vrSection.slug.current}`}
-                  className="mr-3 block font-bold text-lg mb-2"
+                  className="px-4 block font-bold text-xl py-3 !bg-primary text-white"
                 >
                   {vrSection.title}
                 </Link>
@@ -99,7 +99,7 @@ const VrSidebar = ({ section, subSection }) => {
                             to={`/video/${subSection.slug.current}`}
                             partiallyActive={true}
                             // activeStyle={{ color: "red" }}
-                            activeClassName="!bg-red-500 !text-white"
+                            activeClassName="!bg-accent !text-white"
                             className="block font-bold"
                           >
                             {/* <span className={subSectionSlug == subSection.slug.current ? "hidden" : ""}> */}
@@ -107,7 +107,6 @@ const VrSidebar = ({ section, subSection }) => {
                           </Link>
                           <ul className="divide-y bg-slate-100">
                             {subSection.videoRefs.map((videoPage, i) => {
-                              console.log("video Item:", videoPage);
                               return (
                                 <li key={i} className="pl-10 pr-4 py-2">
                                   <Link

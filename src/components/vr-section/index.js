@@ -24,10 +24,11 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 // import MobileNav from "./mobileNav";
 
 import InnerPageHeader from "../inner-page-header";
+import VrBreadcrumbs from "./vr-breadcrumbs";
 
 import VrSidebar from "./vr-sidebar";
 
-const VrLayout = ({ title, section, subSection = "", image, children }) => {
+const VrLayout = ({ title, section, subSection = "", image, children, breadcrumbs }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -58,12 +59,21 @@ const VrLayout = ({ title, section, subSection = "", image, children }) => {
   return (
     <>
       <InnerPageHeader title={title} headerImage={image} />
+      <section className="mx-auto max-w-[94rem] pt-14">
+        <div className=" flex">
+          <div className="w-max min-w-[18rem] p-8 pl-0">
+            <VrSidebar section={section} subSection={subSection} />
+          </div>
+          <div className=" flex-1 pt-6 pb-16">
+            <h1 className="text-6xl !font-extrabold">{title}</h1>
 
-      <section className="mx-auto max-w-[94rem] flex">
-        <div className="w-max min-w-[18rem] p-8">
-          <VrSidebar section={section} subSection={subSection} />
+            <div className="mt-10 mb-8">
+              <VrBreadcrumbs pages={breadcrumbs} />
+            </div>
+
+            {children}
+          </div>
         </div>
-        <div className=" flex-1 pt-8">{children}</div>
       </section>
     </>
   );

@@ -15,6 +15,11 @@ const GenericPageTemplate = (props) => {
   const { data, errors, location, pageContext } = props;
   const page = data && data.page;
 
+  const breadcrumbPages = [
+    { name: page.section[0].title, href: `/video/${page.section[0].slug.current}`, current: false },
+    { name: page.title, href: `/video/${page.slug.current}`, current: true },
+  ];
+
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
@@ -34,7 +39,13 @@ const GenericPageTemplate = (props) => {
       )}
 
       {page && (
-        <VrLayout title={page.title} section={page.section[0]} subSection={page} image={page.image}>
+        <VrLayout
+          title={page.title}
+          section={page.section[0]}
+          subSection={page}
+          image={page.image}
+          breadcrumbs={breadcrumbPages}
+        >
           <ul
             role="list"
             className="grid pt-8 grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"

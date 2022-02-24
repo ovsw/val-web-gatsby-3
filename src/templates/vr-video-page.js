@@ -15,7 +15,23 @@ const GenericPageTemplate = (props) => {
   const page = data && data.page;
 
   //console.log("pageContext:", pageContext);
-  console.log("page", page);
+  const breadcrumbPages = [
+    {
+      name: page.subSection[0].section[0].title,
+      href: `/video/${page.subSection[0].section[0].slug.current}`,
+      current: false,
+    },
+    {
+      name: page.subSection[0].title,
+      href: `/video/${page.subSection[0].slug.current}`,
+      current: false,
+    },
+    {
+      name: page.title,
+      href: `/video/${page.subSection[0].slug.current}/${page.slug.current}`,
+      current: true,
+    },
+  ];
 
   return (
     <Layout>
@@ -41,6 +57,7 @@ const GenericPageTemplate = (props) => {
           section={page.subSection[0].section[0]}
           subSection={page.subSection[0]}
           image={page.image}
+          breadcrumbs={breadcrumbPages}
         >
           {page._rawBody && (
             <div className="prose prose-xl max-w-prose prose-slate">

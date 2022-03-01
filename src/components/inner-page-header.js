@@ -28,7 +28,7 @@ const InnerPageHeader = ({ title, headerImage }) => {
       <div className="in-breadcrumb">
         <div className="row align-items-center">
           <div className="col">
-            <h1 style={{ color: "white" }}>{title}</h1>
+            <h1 className="text-white text-6xl font-bold ">{title}</h1>
             {/* <ul>
             <li><a href='index.html'>Home</a></li>
             <li>Blog</li>

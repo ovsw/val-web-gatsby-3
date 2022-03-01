@@ -12,7 +12,7 @@ const Layout = ({ children, doHideNav, doShowNav, showNav, siteTitle }) => (
   <div id="wrapper" className="wrapper">
     <Header siteTitle={siteTitle} showNav={showNav} doShowNav={doShowNav} doHideNav={doHideNav} />
     {/* Page Conttent */}
-    {children}
+    <div className="layoutChildrenWrapper pt-24">{children}</div>
     <Footer />
   </div>
 );

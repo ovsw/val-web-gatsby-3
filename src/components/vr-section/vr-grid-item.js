@@ -7,27 +7,29 @@ const VrGridItem = ({ description, image, link, title }) => {
   const itemThumbnail = getImage(image?.asset);
   // console.log("image from grid item:", image);
   return (
-    <li className="relative">
-      <div className="group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-blue-500 overflow-hidden">
+    <li className="relative lg:flex group focus-within:ring-2 focus-within:ring-offset-4  focus-within:ring-blue-700">
+      <div
+        className=" block w-full aspect-w-10 aspect-h-7 
+      rounded-tl-lg rounded-tr-lg lg:rounded-tr-none lg:rounded-bl-lg  
+      bg-gray-100  overflow-hidden"
+      >
         <GatsbyImage
+          className=""
           image={itemThumbnail}
-          style={{ transition: "all 0.3s ease-in-out 0s" }}
-          className="object-cover pointer-events-none group-hover:opacity-75"
+          className="object-cover pointer-events-none group-hover:opacity-75 h-full transition ease-in-out duration-300"
           alt={image?.alt}
         />
-        {/* <img
-                        src={file.source}
-                        alt=""
-                        className="object-cover pointer-events-none group-hover:opacity-75"
-                      /> */}
+
         <Link as="button" to={link} className="absolute inset-0 focus:outline-none" type="button">
-          {/* <span className="sr-only">View details for {title}</span> */}
+          <span className="sr-only">View details for {title}</span>
         </Link>
       </div>
-      <p className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">
-        {title}
-      </p>
-      <p className="block text-sm font-medium text-gray-500 pointer-events-none">{description}</p>
+      <div className="p-3 border space-y-2 group-hover:bg-gray-100 transition ease-in-out duration-300">
+        <p className="block text-lg font-medium text-gray-900 truncate pointer-events-none group-hover:text-accent transition ease-in-out duration-300">
+          {title}
+        </p>
+        <p className="block text-sm font-medium text-gray-500 pointer-events-none">{description}</p>
+      </div>
     </li>
   );
 };

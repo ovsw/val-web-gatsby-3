@@ -59,9 +59,9 @@ const VrLayout = ({ title, section, subSection = "", image, children, breadcrumb
   return (
     <>
       <InnerPageHeader title={title} headerImage={image} />
-      <section className="kontainer pt-14">
+      <section className="kontainer pt-14 pb-8 px-4 ">
         <div className=" flex">
-          <div className="w-max min-w-[18rem] p-8 pl-0">
+          <div className="w-max min-w-[18rem] p-8 pl-0 hidden md:block">
             <VrSidebar section={section} subSection={subSection} />
           </div>
           <div className=" flex-1 pt-6 pb-16">

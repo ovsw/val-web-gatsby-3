@@ -9,7 +9,7 @@ const HomeTestimonials = () => {
         <script src="https://embedsocial.com/embedscript/ri.js" />
       </Helmet>
       <section className="in-section section-padding-top-lg bg-white">
-        <div className="container">
+        <div className="kontainer">
           <div className="row justify-content-center">
             <div className="col-lg-6">
               <div className="section-title text-center">

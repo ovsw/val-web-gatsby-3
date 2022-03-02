@@ -15,7 +15,7 @@ const AboutArea = () => {
 
   return (
     <div className="about-area in-section section-padding-top-lg bg-white">
-      <div className="container custom-container">
+      <div className="kontainer custom-container">
         <div className="row no-gutters">
           <div className="col-xl-6 col-lg-12">
             <div className="about-content heightmatch">

@@ -24,7 +24,7 @@ const InnerPageHeader = ({ title, headerImage }) => {
   const customImage = headerImage ? true : false;
 
   const headerContent = (
-    <div className="container">
+    <div className="kontainer">
       <div className="in-breadcrumb">
         <div className="row align-items-center">
           <div className="col">

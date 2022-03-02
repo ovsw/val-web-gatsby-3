@@ -32,7 +32,7 @@ const Hero = () => {
           loading="eager"
           // fadeIn={false}
         >
-          <div className={`container ${customContainer}`}>
+          <div className={`kontainer ${customContainer}`}>
             <div className={`row ${customRow}`}>
               <div className="col-lg-10">
                 <div className={`heroslider-content ${sliderContent}`}>

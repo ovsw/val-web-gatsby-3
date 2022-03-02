@@ -915,6 +915,15 @@
 }
 
 @media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
   .container.custom-container {
     max-width: 1310px;
   }
@@ -4031,7 +4040,7 @@
 
 .footer-contact-area {
   position: relative;
-  z-index: 100;
+  z-index: 1;
 }
 
 .footer-inner {

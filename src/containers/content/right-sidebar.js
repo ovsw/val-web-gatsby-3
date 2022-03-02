@@ -13,7 +13,7 @@ function GenericPage({ title, children, path, noBlogLink, headerImage }) {
       <main className="page-content">
         {/* <!-- Blog Details --> */}
         <div className="blog-details-area section-padding-sm bg-white">
-          <div className="container">
+          <div className="kontainer">
             <div className="row">
               <div className="col-lg-8 mb-5">
                 <div className="blog-details-wrap">

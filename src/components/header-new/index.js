@@ -111,10 +111,10 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
   }
 
   return (
-    <header className="fixed z-50 w-full bg-white">
-      <Popover className="relative mx-auto max-w-screen-2xl">
+    <header className="fixed z-50 w-full bg-white shadow-md">
+      <Popover className="relative mx-auto max-w-screen-xl">
         {/* HEADER BAR */}
-        <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center px-4 py-6 sm:px-6 xl:justify-start md:space-x-10">
           <div>
             <Link to="/" className="flex">
               <span className="sr-only">VA Loans For Vets</span>
@@ -128,7 +128,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
           </div>
 
           {/* HAMBURGER */}
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="-mr-2 -my-2 xl:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
@@ -159,7 +159,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
         >
           <Popover.Panel
             focus
-            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden"
           >
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
               <div className="pt-5 pb-6 px-5">

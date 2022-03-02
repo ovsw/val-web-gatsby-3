@@ -1,10 +1,19 @@
 import React, { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import { Link } from "gatsby";
 
 import {
+  AdjustmentsIcon,
+  BadgeCheckIcon,
   ChartBarIcon,
+  ClipboardListIcon,
+  CurrencyDollarIcon,
   CursorClickIcon,
+  DesktopComputerIcon,
   DocumentReportIcon,
+  DocumentTextIcon,
+  HeartIcon,
+  HomeIcon,
   MenuIcon,
   RefreshIcon,
   ShieldCheckIcon,
@@ -15,7 +24,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
   return (
-    <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
+    <div className="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
       <Popover.Group as="nav" className="flex space-x-10">
         <Popover className="relative">
           {({ open }) => (
@@ -56,19 +65,20 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
                       {/* ITEMS MAP */}
                       <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-2">
                         {vaLoans[0].items.map((item) => (
-                          <a
+                          <div
                             key={item.name}
-                            href={item.href}
-                            className="-m-3 py-3 flex items-start rounded-lg hover:bg-gray-50"
+                            className="-m-3 py-3 px-3 flex items-start rounded-lg hover:bg-gray-50"
                           >
                             <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-accent-dark text-white sm:h-12 sm:w-12">
                               <item.icon className="h-6 w-6" aria-hidden="true" />
                             </div>
                             <div className="ml-3">
-                              <p className="text-base font-medium text-gray-900">{item.name}</p>
+                              <Link to={item.href} className="text-base font-medium text-gray-900">
+                                {item.name}
+                              </Link>
                               <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                             </div>
-                          </a>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -83,19 +93,20 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
                       {/* ITEMS MAP */}
                       <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-2">
                         {vaLoans[1].items.map((item) => (
-                          <a
+                          <div
                             key={item.name}
-                            href={item.href}
                             className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                           >
                             <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-primary-light text-white sm:h-12 sm:w-12">
                               <item.icon className="h-6 w-6" aria-hidden="true" />
                             </div>
                             <div className="ml-4">
-                              <p className="text-base font-medium text-gray-900">{item.name}</p>
+                              <Link to={item.href} className="text-base font-medium text-gray-900">
+                                {item.name}
+                              </Link>
                               <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                             </div>
-                          </a>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -121,15 +132,18 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
             </>
           )}
         </Popover>
-        <a href="#" className=" text-lg font-medium text-gray-500 hover:text-gray-900">
+        <Link to="/refinancing/" className=" text-lg font-medium text-gray-500 hover:text-gray-900">
           VA Refinance
-        </a>
-        <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900">
+        </Link>
+        <Link
+          to="/va-loans-closing-costs-calculator/"
+          className="text-lg font-medium text-gray-500 hover:text-gray-900"
+        >
           Mortgage Calculator
-        </a>
-        <a href="#" className="text-lg font-medium text-gray-500 hover:text-gray-900">
+        </Link>
+        <Link to="/my-story/" className="text-lg font-medium text-gray-500 hover:text-gray-900">
           My Story
-        </a>
+        </Link>
 
         <Popover className="relative">
           {({ open }) => (
@@ -163,14 +177,12 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                       {resources.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="-m-3 p-3 block rounded-md hover:bg-gray-50"
-                        >
-                          <p className="text-lg font-medium text-gray-900">{item.name}</p>
+                        <div key={item.name} className="-m-3 p-3 block rounded-md hover:bg-gray-50">
+                          <Link to={item.href} className="text-lg font-medium text-gray-900">
+                            {item.name}
+                          </Link>
                           <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                        </a>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -203,27 +215,27 @@ const vaLoans = [
     items: [
       {
         name: "Fixed Rate VA Loan",
-        description: "Get a better understanding of where your traffic is coming from.",
-        href: "#",
-        icon: ChartBarIcon,
+        description: "Maximum interest deduction for taxes, but more interest overall.",
+        href: "/types-of-loans/",
+        icon: HeartIcon,
       },
       {
         name: "Adjustable Rate VA Loan (ARM)",
-        description: "Speak directly to your customers in a more meaningful way.",
-        href: "#",
-        icon: CursorClickIcon,
+        description: "Lower starting rate, but loan balance due can change long term.",
+        href: "/types-of-loans/",
+        icon: AdjustmentsIcon,
       },
       {
         name: "VA Jumbo Loan",
-        description: "Your customers' data will be safe and secure.",
-        href: "#",
-        icon: ShieldCheckIcon,
+        description: "A non-conforming loan, for an amount that exceeds conventional loan limits.",
+        href: "/va-jumbo-loans/",
+        icon: ViewGridIcon,
       },
       {
         name: "Home Improvement VA Loan",
-        description: "Connect with third-party tools that you're already using.",
-        href: "#",
-        icon: ViewGridIcon,
+        description: "All about VA guaranteed home loans available for home improvements.",
+        href: "/home-improvements-va-loan/",
+        icon: HomeIcon,
       },
       // {
       //   name: "Automations",
@@ -245,44 +257,44 @@ const vaLoans = [
       {
         name: "VA Loan Eligibility",
         description: "What Are VA Loan Requirements?",
-        href: "#",
-        icon: ChartBarIcon,
+        href: "/va-loan-eligibility/",
+        icon: BadgeCheckIcon,
       },
       {
         name: "VA Loan Rates",
         description: "How Do VA Loan Rates Differ?",
-        href: "#",
-        icon: CursorClickIcon,
+        href: "/va-loan-rates-differ/",
+        icon: CurrencyDollarIcon,
       },
       {
         name: "VA Loan Benefits",
         description: "Why Use a VA Home Loan? ",
-        href: "#",
+        href: "/2020-va-loan-benefits/",
         icon: ShieldCheckIcon,
       },
       {
         name: "VA Loan Process",
         description: "A step-by-step guide to buying your own home.",
-        href: "#",
-        icon: ViewGridIcon,
+        href: "/va-loan-process/",
+        icon: ChartBarIcon,
       },
       {
         name: "VA Loan Checklist",
         description: "A list of critical info you need to provide for your VA loan.",
-        href: "#",
-        icon: RefreshIcon,
+        href: "/loan-checklist/",
+        icon: ClipboardListIcon,
       },
       {
         name: "VA Certificate of Eligibility",
         description: "A confusing but essential step.",
-        href: "#",
-        icon: DocumentReportIcon,
+        href: "/va-loan-certificate-of-eligibility/",
+        icon: DocumentTextIcon,
       },
       {
         name: "VA Loan Apps",
         description: "Learn if you Qualify for a VA Loan within Minutes.",
-        href: "#",
-        icon: DocumentReportIcon,
+        href: "/va-loan-app-free-mobile-tool/",
+        icon: DesktopComputerIcon,
       },
     ],
   },
@@ -291,22 +303,22 @@ const resources = [
   {
     name: "Blog",
     description: "Read helpful articles and guides.",
-    href: "#",
+    href: "/blog/",
   },
   {
     name: "Video",
     description: "Our video library covers the entire Loan Journey.",
-    href: "#",
+    href: "/video/journey/",
   },
   {
     name: "FAQs",
     description: "Get answers to the most recent questions.",
-    href: "#",
+    href: "/va-post-loan-faq/",
   },
   {
     name: "Mortgage Term Glossary",
     description: "Get familiar with the terminology",
-    href: "#",
+    href: "/video/glossary/",
   },
 ];
 

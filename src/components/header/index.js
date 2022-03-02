@@ -36,7 +36,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
     <header className="header">
       {/*  Header Top Area  */}
       <div className="header-toparea">
-        <div className="container">
+        <div className="kontainer">
           <div className="row justify-content-betwween">
             <div className="col-md-6">
               {/*  Header Logo */}
@@ -67,7 +67,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
       {/*  Header Bottom Area */}
       <div className="header-bottomarea">
-        <div className="container">
+        <div className="kontainer">
           <div className="header-bottom">
             {/*  Main Navigation */}
             <MainNav navStructure={siteNav} />
@@ -79,7 +79,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
       {/*  Mobile Menu */}
       <div className="mobile-menu-wrapper clearfix">
-        <div className="container">
+        <div className="kontainer">
           <div className="mobile-menu" />
         </div>
       </div>

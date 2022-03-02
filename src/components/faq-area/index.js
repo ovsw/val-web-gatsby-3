@@ -34,7 +34,7 @@ const FAQArea = ({ sectionTitle, sectionSubtitle, faqContent }) => {
       backgroundColor={`#163963`}
       fadeIn={false}
     >
-      <div className="container">
+      <div className="kontainer">
         <div className="row justify-content-center in-cta">
           <div className="col-lg-8">
             <div className="section-title text-center">

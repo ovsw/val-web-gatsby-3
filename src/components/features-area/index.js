@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const Highlights = () => {
   return (
     <div className="features-area in-section section-padding-md bg-white">
-      <div className="container">
+      <div className="kontainer">
         <div className="row justify-content-center">
           <div className="col-lg-6">
             <div className="section-title text-center">

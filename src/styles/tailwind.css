@@ -9,4 +9,7 @@
   .activeVrSidebarLink {
     @apply !text-red-500 font-bold;
   }
+  .kontainer {
+    @apply mx-auto max-w-screen-xl;
+  }
 }

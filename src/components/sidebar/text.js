@@ -10,7 +10,7 @@ const Text = () => {
         <span>Get a VA Loan</span>
       </h3>
       <div className="text-center">
-        <p>
+        <p className="my-4">
           I am here to help you achieve <br /> home ownership.
         </p>
 
@@ -20,7 +20,7 @@ const Text = () => {
         </Link>
       </div>
 
-      <p className="mt-4 text-center h5">
+      <p className="my-4 text-center h5">
         Or Call Me At
         <br />
         <a href="tel:602-908-5849">602-908-5849</a>

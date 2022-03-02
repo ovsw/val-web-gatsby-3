@@ -10,7 +10,7 @@ import PortableText from "./portableText";
 function GenericPage(props) {
   const { _rawBody, title } = props;
   return (
-    <di>
+    <div>
       {/* <h1>{title}</h1> */}
       <div className="prose prose-xl max-w-full">
         {_rawBody && <PortableText blocks={_rawBody} />}
@@ -19,7 +19,7 @@ function GenericPage(props) {
       <div className="in-blog-metabottom mt-30">
         {/* <span><a href='#'><i className='zmdi zmdi-favorite-outline' /> Like : 08</a> / <a href='#'><i className='zmdi zmdi-comment-outline' />Comment</a></span> */}
       </div>
-    </di>
+    </div>
   );
 }
 

@@ -5,10 +5,22 @@ import { StaticImage } from "gatsby-plugin-image";
 // tailwind ui imports
 import { Popover, Transition } from "@headlessui/react";
 import {
+  AcademicCapIcon,
+  AdjustmentsIcon,
+  BadgeCheckIcon,
   ChartBarIcon,
+  ClipboardListIcon,
+  CurrencyDollarIcon,
   CursorClickIcon,
+  DesktopComputerIcon,
   DocumentReportIcon,
+  DocumentTextIcon,
+  HeartIcon,
+  HomeIcon,
+  LocationMarkerIcon,
+  QuestionMarkCircleIcon,
   MenuIcon,
+  NewspaperIcon,
   RefreshIcon,
   ShieldCheckIcon,
   ViewGridIcon,
@@ -49,62 +61,6 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
     siteMetadata: { siteNav },
   } = site;
 
-  const solutions = [
-    {
-      name: "Analytics",
-      description: "Get a better understanding of where your traffic is coming from.",
-      href: "#",
-      icon: ChartBarIcon,
-    },
-    {
-      name: "Engagement",
-      description: "Speak directly to your customers in a more meaningful way.",
-      href: "#",
-      icon: CursorClickIcon,
-    },
-    {
-      name: "Security",
-      description: "Your customers' data will be safe and secure.",
-      href: "#",
-      icon: ShieldCheckIcon,
-    },
-    {
-      name: "Integrations",
-      description: "Connect with third-party tools that you're already using.",
-      href: "#",
-      icon: ViewGridIcon,
-    },
-    {
-      name: "Automations",
-      description: "Build strategic funnels that will drive your customers to convert",
-      href: "#",
-      icon: RefreshIcon,
-    },
-    {
-      name: "Reports",
-      description: "Get detailed reports that will help you make more informed decisions ",
-      href: "#",
-      icon: DocumentReportIcon,
-    },
-  ];
-  const resources = [
-    {
-      name: "Help Center",
-      description: "Get all of your questions answered in our forums or contact support.",
-      href: "#",
-    },
-    {
-      name: "Guides",
-      description: "Learn how to maximize our platform to get the most out of it.",
-      href: "#",
-    },
-    {
-      name: "Events",
-      description: "See what meet-ups and other events we might be planning near you.",
-      href: "#",
-    },
-    { name: "Security", description: "Understand how we take your privacy seriously.", href: "#" },
-  ];
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -129,7 +85,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
           {/* HAMBURGER */}
           <div className="-mr-2 -my-2 xl:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -159,20 +115,21 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
         >
           <Popover.Panel
             focus
-            className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right xl:hidden"
+            className="absolute top-0 inset-x-0 transition transform origin-top-right xl:hidden max-w-[100vw]"
           >
             <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-              <div className="pt-5 pb-6 px-5">
+              <div className="pt-4 pb-6 px-4">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                      alt="Workflow"
-                    />
-                  </div>
+                  <Link to="/">
+                  <StaticImage
+                src="../../images/logo/va-loans-for-vets-logo-light.jpg"
+                alt="VA Loans For Vets"
+                placeholder="none"
+                // className="h-8 w-auto sm:h-10"
+              />
+                  </Link>
                   <div className="-mr-2">
-                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
                       <span className="sr-only">Close menu</span>
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -180,24 +137,24 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-6">
-                    {solutions.map((item) => (
-                      <a
+                    {mobileMainItems.map((item) => (
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white">
+                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-accent text-white">
                           <item.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
                         <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
-                      </a>
+                      </Link>
                     ))}
                   </nav>
                 </div>
               </div>
-              <div className="py-6 px-5">
+              <div className="py-6 px-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  {/* <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
                     Pricing
                   </a>
 
@@ -207,30 +164,30 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
                   <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
                     Enterprise
-                  </a>
-                  {resources.map((item) => (
-                    <a
+                  </a> */}
+                  {mobileLowerItems.map((item) => (
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="text-base font-medium text-gray-900 hover:text-gray-700"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="mt-6">
                   <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                    href="https://connect.valoansforvets.com/"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-accent"
                   >
-                    Sign up
+                    Apply
                   </a>
-                  <p className="mt-6 text-center text-base font-medium text-gray-500">
+                  {/* <p className="mt-6 text-center text-base font-medium text-gray-500">
                     Existing customer?{" "}
-                    <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                    <a href="#" className="text-accent hover:text-accent">
                       Sign in
                     </a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -243,3 +200,59 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 };
 
 export default Header;
+
+const mobileMainItems = [
+  {
+    name: "Fixed Rate VA Loan",
+    description: "Maximum interest deduction for taxes, but more interest overall.",
+    href: "/types-of-loans/",
+    icon: LocationMarkerIcon,
+  },
+  {
+    name: "Adjustable Rate VA Loan (ARM)",
+    description: "Lower starting rate, but loan balance due can change long term.",
+    href: "/types-of-loans/",
+    icon: AdjustmentsIcon,
+  },
+  {
+    name: "VA Jumbo Loan",
+    description: "A non-conforming loan, for an amount that exceeds conventional loan limits.",
+    href: "/va-jumbo-loans/",
+    icon: ViewGridIcon,
+  },
+  {
+    name: "Home Improvement VA Loan",
+    description: "All about VA guaranteed home loans available for home improvements.",
+    href: "/home-improvements-va-loan/",
+    icon: HomeIcon,
+  },
+];
+const mobileLowerItems = [
+  {
+    name: "Video Resources",
+    description: "Get all of your questions answered in our forums or contact support.",
+    href: "/video/",
+  },
+  {
+    name: "VA Refinance",
+    description: "Learn how to maximize our platform to get the most out of it.",
+    href: "/refinancing/",
+  },
+  {
+    name: "FAQs",
+    description: "See what meet-ups and other events we might be planning near you.",
+    href: "/faqs/",
+  },
+  {
+    name: "Blog",
+    description: "See what meet-ups and other events we might be planning near you.",
+    href: "/blog/",
+  },
+  {
+    name: "Mortgage Calculator",
+    description: "See what meet-ups and other events we might be planning near you.",
+    href: "/va-loans-closing-costs-calculator/",
+  },
+  
+  { name: "Contact", description: "Understand how we take your privacy seriously.", href: "#" },
+];

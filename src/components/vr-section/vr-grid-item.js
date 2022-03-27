@@ -7,14 +7,13 @@ const VrGridItem = ({ description, image, link, title }) => {
   const itemThumbnail = getImage(image?.asset);
   // console.log("image from grid item:", image);
   return (
-    <li className="relative lg:flex group focus-within:ring-2 focus-within:ring-offset-4  focus-within:ring-blue-700">
+    <li className="relative group focus-within:ring-2 focus-within:ring-offset-4  focus-within:ring-blue-700">
       <div
         className=" block w-full aspect-w-10 aspect-h-7 
-      rounded-tl-lg rounded-tr-lg lg:rounded-tr-none lg:rounded-bl-lg  
+      rounded-tl-lg rounded-tr-lg
       bg-gray-100  overflow-hidden"
       >
         <GatsbyImage
-          className=""
           image={itemThumbnail}
           className="object-cover pointer-events-none group-hover:opacity-75 h-full transition ease-in-out duration-300"
           alt={image?.alt}

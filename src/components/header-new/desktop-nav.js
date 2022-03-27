@@ -3,6 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { Link } from "gatsby";
 
 import {
+  AcademicCapIcon,
   AdjustmentsIcon,
   BadgeCheckIcon,
   ChartBarIcon,
@@ -14,124 +15,22 @@ import {
   DocumentTextIcon,
   HeartIcon,
   HomeIcon,
+  QuestionMarkCircleIcon,
   MenuIcon,
+  NewspaperIcon,
   RefreshIcon,
   ShieldCheckIcon,
   ViewGridIcon,
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import DesktopDropdown from "./desktop-dropdown";
 
 const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
   return (
     <div className="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
       <Popover.Group as="nav" className="flex space-x-10">
-        <Popover className="relative">
-          {({ open }) => (
-            <>
-              <Popover.Button
-                className={classNames(
-                  open ? "text-gray-900" : "text-gray-500",
-                  "group bg-white rounded-md inline-flex items-center text-lg font-medium hover:text-gray-900 mainMenuFocusStyles"
-                )}
-              >
-                <span>VA Loans</span>
-                <ChevronDownIcon
-                  className={classNames(
-                    open ? "text-gray-600" : "text-gray-400",
-                    "ml-2 h-5 w-5 group-hover:text-gray-500"
-                  )}
-                  aria-hidden="true"
-                />
-              </Popover.Button>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-1"
-              >
-                <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-3xl">
-                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    {/* Submenu Group */}
-                    <div className="px-5 py-6 sm:p-8 bg-white">
-                      <p className="uppercase text-gray-600 text-sm mb-3 tracking-wider">
-                        Types of VA Loans
-                      </p>
-
-                      {/* ITEMS MAP */}
-                      <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-2">
-                        {vaLoans[0].items.map((item) => (
-                          <div
-                            key={item.name}
-                            className="-m-3 py-3 px-3 flex items-start rounded-lg hover:bg-gray-50"
-                          >
-                            <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-accent-dark text-white sm:h-12 sm:w-12">
-                              <item.icon className="h-6 w-6" aria-hidden="true" />
-                            </div>
-                            <div className="ml-3">
-                              <Link to={item.href} className="text-base font-medium text-gray-900">
-                                {item.name}
-                              </Link>
-                              <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {/* END Group */}
-
-                    {/* Submenu Group */}
-                    <div className="px-5 py-6 sm:p-8 bg-gray-100">
-                      <p className="uppercase text-gray-600 text-sm mb-3 tracking-wider">
-                        VA Loan Info
-                      </p>
-
-                      {/* ITEMS MAP */}
-                      <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-2">
-                        {vaLoans[1].items.map((item) => (
-                          <div
-                            key={item.name}
-                            className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
-                          >
-                            <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-primary-light text-white sm:h-12 sm:w-12">
-                              <item.icon className="h-6 w-6" aria-hidden="true" />
-                            </div>
-                            <div className="ml-4">
-                              <Link to={item.href} className="text-base font-medium text-gray-900">
-                                {item.name}
-                              </Link>
-                              <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    {/* END Group */}
-
-                    {/* Submenu Group */}
-                    {/* <div className="p-5 bg-w sm:p-8">
-                      <a href="#" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100">
-                        <div className="flex items-center">
-                          <div className="text-base font-medium text-gray-900">Enterprise</div>
-                          <span className="ml-3 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-blue-100 text-primary-dark">
-                            New
-                          </span>
-                        </div>
-                        <p className="mt-1 text-sm text-gray-500">
-                          Empower your entire team with even more advanced tools.
-                        </p>
-                      </a>
-                    </div> */}
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
+        <DesktopDropdown title="VA Loans" menuItems={vaLoans} />
         <Link
           to="/refinancing/"
           className=" text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
@@ -155,7 +54,9 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
           My Story
         </Link>
 
-        <Popover className="relative">
+        <DesktopDropdown title="Resources" menuItems={resources} narrow={true} />
+
+        {/* <Popover className="relative">
           {({ open }) => (
             <>
               <Popover.Button
@@ -201,7 +102,7 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
               </Transition>
             </>
           )}
-        </Popover>
+        </Popover> */}
       </Popover.Group>
       <div className="flex items-center md:ml-12">
         <Link to="/contact-me/" className="text-lg font-medium text-gray-500 hover:text-gray-900">
@@ -311,6 +212,51 @@ const vaLoans = [
   },
 ];
 const resources = [
+  {
+    text: "Video Resources",
+    items: [
+      {
+        name: "All About VA Loans",
+        description: "Videos on everyhting you need so you can apply with confidence.",
+        // description: "We educate you on everything related to VA Loans so you can apply with confidence. Work with an experienced lender on a home loan made just for active-duty service members and veterans.",
+        href: "/video/all-about-va-loans/",
+        icon: AcademicCapIcon,
+      },
+      {
+        name: "Our VA Loan Journey",
+        description: "Video series showcasing the entire journey from start to finish.",
+        // description: "Jimmy Vercellino and his veteran-run team serve you from the application to closing. Watch our personalized loan journey to see how we’ll get you and your partner into the home you’ve always wanted.",
+        href: "/video/our-va-loan-journey/",
+        icon: ChartBarIcon,
+      },
+    ],
+  },
+  {
+    text: "Written Resources",
+    items: [
+      {
+        name: "Our Blog",
+        description: "Helpful articles and guides.",
+        href: "/blog/",
+        icon: NewspaperIcon,
+      },
+      {
+        name: "FAQs",
+        description: "Answers to your most important questions.",
+        href: "/va-loan-rates-differ/",
+        icon: QuestionMarkCircleIcon,
+      },
+      {
+        name: "VA Loans Term Glossary",
+        description: "Get familiar with the technology.",
+        href: "/mortgage-terms-glossary/",
+        icon: ClipboardListIcon,
+      },
+    ],
+  },
+];
+
+const resourcesOld = [
   {
     name: "Blog",
     description: "Read helpful articles and guides.",

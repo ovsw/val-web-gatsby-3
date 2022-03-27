@@ -103,7 +103,7 @@ const VrSidebar = ({ section, subSection }) => {
                             className="block font-bold"
                           >
                             {/* <span className={subSectionSlug == subSection.slug.current ? "hidden" : ""}> */}
-                            <span className="pl-4 pr-4 py-2 block">{subSection.title}</span>
+                            <span className="pl-4 pr-4 py-3 block text-lg">{subSection.title}</span>
                           </Link>
                           <ul className="divide-y bg-slate-100">
                             {subSection.videoRefs.map((videoPage, i) => {

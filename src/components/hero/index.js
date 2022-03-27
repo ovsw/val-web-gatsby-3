@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="heroslider pt-24">
+      <div className="heroslider">
         <BgImage
           Tag="div"
           className={`heroSliderBg d-flex align-items-center ${customHeroSliderBg}`}

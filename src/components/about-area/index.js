@@ -14,7 +14,7 @@ const AboutArea = () => {
   const [videoToggler, setvideoToggler] = useState(false);
 
   return (
-    <div className="about-area in-section section-padding-top-lg bg-white">
+    <div className="about-area in-section bg-white">
       <div className="kontainer custom-container">
         <div className="row no-gutters">
           <div className="col-xl-6 col-lg-12">
@@ -67,7 +67,7 @@ const AboutArea = () => {
             />
           </div>
           <div className="col-xl-6 col-lg-12 d-flex align-items-stretch">
-            <div className="insurencebox d-flex flex-column align-items-start justify-content-center w-100">
+            <div className="insurencebox d-flex flex-column align-items-start justify-content-center w-100 space-y-10">
               {/* <h4>MY MISSION</h4> */}
               {/* <h3 className='h2'>VIDEO: Interview on 3TV</h3> */}
               <h3 className="h4">

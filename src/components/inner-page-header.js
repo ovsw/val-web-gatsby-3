@@ -26,7 +26,7 @@ const InnerPageHeader = ({ title, headerImage }) => {
   const headerContent = (
     <div className="kontainer">
       <div className="in-breadcrumb">
-        <div className="row align-items-center">
+        <div className="row align-items-center max-w-screen-md">
           <div className="col">
             <h1 className="text-white text-6xl font-bold ">{title}</h1>
             {/* <ul>

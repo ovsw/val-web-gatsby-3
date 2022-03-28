@@ -251,7 +251,7 @@ const resources = [
       {
         name: "FAQs",
         description: "Answers to your most important questions.",
-        href: "/va-loan-rates-differ/",
+        href: "/va-post-loan-faq/",
         icon: QuestionMarkCircleIcon,
       },
       {

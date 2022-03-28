@@ -22,6 +22,7 @@ function BlogPost(props) {
       </div>
       <img
         style={{ margin: "0 auto 2rem", display: "block", width: "100%" }}
+        className="px-4 lg:px-0"
         src={imageUrlFor(buildImageObj(mainImage))
           .width(800)
           .height(400)
@@ -30,8 +31,8 @@ function BlogPost(props) {
           .url()}
         alt={mainImage.alt}
       />
-      <div className="prose-lg max-w-4xl">
-      {_rawBody && <PortableText blocks={_rawBody} />}
+      <div className="prose-lg max-w-4xl px-4 lg:px-0">
+        {_rawBody && <PortableText blocks={_rawBody} />}
       </div>
 
       <div className="in-blog-metabottom mt-30">

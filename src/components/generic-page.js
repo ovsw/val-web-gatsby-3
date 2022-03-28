@@ -12,7 +12,7 @@ function GenericPage(props) {
   return (
     <div>
       {/* <h1>{title}</h1> */}
-      <div className="prose prose-xl max-w-full">
+      <div className="prose prose-xl max-w-full px-4 lg:px-0">
         {_rawBody && <PortableText blocks={_rawBody} />}
       </div>
 

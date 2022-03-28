@@ -22,6 +22,7 @@ import {
   MenuIcon,
   NewspaperIcon,
   RefreshIcon,
+  PlayIcon,
   ShieldCheckIcon,
   ViewGridIcon,
   XIcon,
@@ -61,7 +62,6 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
     siteMetadata: { siteNav },
   } = site;
 
-
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
@@ -85,7 +85,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
           {/* HAMBURGER */}
           <div className="-mr-2 -my-2 xl:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent mr-2">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -121,12 +121,12 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
               <div className="pt-4 pb-6 px-4">
                 <div className="flex items-center justify-between">
                   <Link to="/">
-                  <StaticImage
-                src="../../images/logo/va-loans-for-vets-logo-light.jpg"
-                alt="VA Loans For Vets"
-                placeholder="none"
-                // className="h-8 w-auto sm:h-10"
-              />
+                    <StaticImage
+                      src="../../images/logo/va-loans-for-vets-logo-light.jpg"
+                      alt="VA Loans For Vets"
+                      placeholder="none"
+                      // className="h-8 w-auto sm:h-10"
+                    />
                   </Link>
                   <div className="-mr-2">
                     <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
@@ -143,7 +143,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
                         to={item.href}
                         className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                       >
-                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-accent text-white">
+                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-primary-light text-white">
                           <item.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
                         <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
@@ -202,18 +202,18 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 export default Header;
 
 const mobileMainItems = [
-  {
-    name: "Fixed Rate VA Loan",
-    description: "Maximum interest deduction for taxes, but more interest overall.",
-    href: "/types-of-loans/",
-    icon: LocationMarkerIcon,
-  },
-  {
-    name: "Adjustable Rate VA Loan (ARM)",
-    description: "Lower starting rate, but loan balance due can change long term.",
-    href: "/types-of-loans/",
-    icon: AdjustmentsIcon,
-  },
+  // {
+  //   name: "Fixed Rate VA Loan",
+  //   description: "Maximum interest deduction for taxes, but more interest overall.",
+  //   href: "/types-of-loans/",
+  //   icon: LocationMarkerIcon,
+  // },
+  // {
+  //   name: "Adjustable Rate VA Loan (ARM)",
+  //   description: "Lower starting rate, but loan balance due can change long term.",
+  //   href: "/types-of-loans/",
+  //   icon: AdjustmentsIcon,
+  // },
   {
     name: "VA Jumbo Loan",
     description: "A non-conforming loan, for an amount that exceeds conventional loan limits.",
@@ -226,18 +226,26 @@ const mobileMainItems = [
     href: "/home-improvements-va-loan/",
     icon: HomeIcon,
   },
-];
-const mobileLowerItems = [
-  {
-    name: "Video Resources",
-    description: "Get all of your questions answered in our forums or contact support.",
-    href: "/video/",
-  },
   {
     name: "VA Refinance",
     description: "Learn how to maximize our platform to get the most out of it.",
     href: "/refinancing/",
+    icon: RefreshIcon,
   },
+  {
+    name: "VA Loan Eligibility",
+    description: "What Are VA Loan Requirements?",
+    href: "/va-loan-eligibility/",
+    icon: BadgeCheckIcon,
+  },
+  {
+    name: "Video Resources",
+    description: "Get all of your questions answered in our forums or contact support.",
+    href: "/video/",
+    icon: PlayIcon,
+  },
+];
+const mobileLowerItems = [
   {
     name: "FAQs",
     description: "See what meet-ups and other events we might be planning near you.",
@@ -249,10 +257,15 @@ const mobileLowerItems = [
     href: "/blog/",
   },
   {
-    name: "Mortgage Calculator",
-    description: "See what meet-ups and other events we might be planning near you.",
-    href: "/va-loans-closing-costs-calculator/",
+    name: "My Story",
+    description: "Get all of your questions answered in our forums or contact support.",
+    href: "/my-story/",
   },
-  
+  // {
+  //   name: "Mortgage Calculator",
+  //   description: "See what meet-ups and other events we might be planning near you.",
+  //   href: "/va-loans-closing-costs-calculator/",
+  // },
+
   { name: "Contact", description: "Understand how we take your privacy seriously.", href: "#" },
 ];

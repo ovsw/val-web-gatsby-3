@@ -4,9 +4,9 @@ import { Link } from "gatsby";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const DesktopDropdown = ({ title, menuItems, narrow = false }) => {
-  const dynamicColumnNo = narrow ? "": "lg:grid-cols-2"
-  const dynamicWrapperWidth = narrow ? "max-w-md": "max-w-md lg:max-w-3xl"
-  
+  const dynamicColumnNo = narrow ? "" : "lg:grid-cols-2";
+  const dynamicWrapperWidth = narrow ? "max-w-md" : "max-w-md lg:max-w-3xl";
+
   return (
     <Popover className="relative">
       {({ open }) => (
@@ -36,7 +36,9 @@ const DesktopDropdown = ({ title, menuItems, narrow = false }) => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className={`absolute z-10 -ml-4 mt-3 transform w-screen ${dynamicWrapperWidth}`}>
+            <Popover.Panel
+              className={`absolute z-10 -ml-4 mt-3 transform w-screen ${dynamicWrapperWidth}`}
+            >
               <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                 {/* Submenu Group */}
                 <div className="px-5 py-6 sm:p-8 bg-white">
@@ -47,20 +49,24 @@ const DesktopDropdown = ({ title, menuItems, narrow = false }) => {
                   {/* ITEMS MAP */}
                   <div className={`relative grid gap-6 sm:gap-8 ${dynamicColumnNo}`}>
                     {menuItems[0].items.map((item) => (
-                      <div
+                      <Link
+                        to={item.href}
                         key={item.name}
-                        className="-m-3 py-3 px-3 flex items-start rounded-lg hover:bg-gray-50"
+                        className="-m-3 py-3 px-3 flex items-start rounded-lg hover:bg-gray-100 hover:no-underline group"
                       >
                         <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-accent-dark text-white sm:h-12 sm:w-12">
                           <item.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
-                        <div className="ml-3">
-                          <Link to={item.href} className="text-base font-medium text-gray-900">
+                        <span
+                          className="ml-3 after:content-[attr(after)] after:block after:text-sm after:text-gray-500 after:mt-1"
+                          after={item.description}
+                        >
+                          <div className="text-base font-medium text-gray-900 group-hover:text-accent-dark group-hover:underline">
                             {item.name}
-                          </Link>
-                          <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                        </div>
-                      </div>
+                          </div>
+                          {/* <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -73,22 +79,26 @@ const DesktopDropdown = ({ title, menuItems, narrow = false }) => {
                   </p>
 
                   {/* ITEMS MAP */}
-                  <div className={`relative grid gap-6 sm:gap-8 ${dynamicWrapperWidth}`}>
+                  <div className={`relative grid gap-6 sm:gap-8 ${dynamicColumnNo}`}>
                     {menuItems[1].items.map((item) => (
-                      <div
+                      <Link
+                        to={item.href}
                         key={item.name}
-                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                        className="-m-3 p-3 flex items-start rounded-lg hover:bg-white group hover:no-underline"
                       >
                         <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-primary-light text-white sm:h-12 sm:w-12">
                           <item.icon className="h-6 w-6" aria-hidden="true" />
                         </div>
-                        <div className="ml-4">
-                          <Link to={item.href} className="text-base font-medium text-gray-900">
+                        <span
+                          className="ml-4 after:content-[attr(after)] after:block after:text-sm after:mt-1 after:group-hover:!text-gray-700"
+                          after={item.description}
+                        >
+                          <span className="text-base font-medium text-gray-900 group-hover:text-accent-dark group-hover:underline ">
                             {item.name}
-                          </Link>
-                          <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                        </div>
-                      </div>
+                          </span>
+                          {/* <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>

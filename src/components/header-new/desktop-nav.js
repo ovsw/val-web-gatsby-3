@@ -31,32 +31,16 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
     <div className="hidden xl:flex-1 xl:flex xl:items-center xl:justify-between">
       <Popover.Group as="nav" className="flex space-x-10">
         <DesktopDropdown title="VA Loans" menuItems={vaLoans} />
-        <Link
+        {/* <Link
           to="/refinancing/"
           className=" text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
           activeClassName="activeMainMenuItemStyles"
           partiallyActive={true}
         >
           VA Refinance
-        </Link>
-        <Link
-          to="/va-loans-closing-costs-calculator/"
-          className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
-          activeClassName="activeMainMenuItemStyles"
-        >
-          Mortgage Calculator
-        </Link>
-        <Link
-          to="/my-story/"
-          className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
-          activeClassName="activeMainMenuItemStyles"
-        >
-          My Story
-        </Link>
+        </Link> */}
 
-        <DesktopDropdown title="Resources" menuItems={resources} narrow={true} />
-
-        {/* <Popover className="relative">
+        <Popover className="relative">
           {({ open }) => (
             <>
               <Popover.Button
@@ -66,7 +50,7 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
                   // focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary
                 )}
               >
-                <span>Resources</span>
+                <span>Refinance</span>
                 <ChevronDownIcon
                   className={classNames(
                     open ? "text-gray-600" : "text-gray-400",
@@ -85,16 +69,23 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                <Popover.Panel className="absolute z-10 left-2/3 transform -translate-x-1/3 mt-3 px-2 w-screen max-w-md sm:px-0">
+                <Popover.Panel className="absolute z-10 left-2/3 transform -translate-x-1/3 mt-3 px-2 w-screen max-w-xs sm:px-0">
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                      {resources.map((item) => (
-                        <div key={item.name} className="-m-3 p-3 block rounded-md hover:bg-gray-50">
-                          <Link to={item.href} className="text-lg font-medium text-gray-900">
+                    <div className="relative grid gap-6 bg-white px-6 py-6 sm:gap-8 sm:p-8">
+                      {refinance.map((item) => (
+                        <Link
+                          to={item.href}
+                          key={item.name}
+                          className="-m-3 p-3 block rounded-md hover:bg-gray-50"
+                        >
+                          <span
+                            className="text-lg font-medium text-gray-900 after:content-[attr(after)] after:mt-1 after:text-sm after:text-gray-500 after:block"
+                            after={item.description}
+                          >
                             {item.name}
-                          </Link>
-                          <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                        </div>
+                          </span>
+                          {/* <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -102,7 +93,24 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
               </Transition>
             </>
           )}
-        </Popover> */}
+        </Popover>
+
+        {/* <Link
+          to="/va-loans-closing-costs-calculator/"
+          className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
+          activeClassName="activeMainMenuItemStyles"
+        >
+          Mortgage Calculator
+        </Link> */}
+        <Link
+          to="/my-story/"
+          className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
+          activeClassName="activeMainMenuItemStyles"
+        >
+          My Story
+        </Link>
+
+        <DesktopDropdown title="Resources" menuItems={resources} narrow={true} />
       </Popover.Group>
       <div className="flex items-center md:ml-12">
         <Link to="/contact-me/" className="text-lg font-medium text-gray-500 hover:text-gray-900">
@@ -125,18 +133,18 @@ const vaLoans = [
   {
     text: "Types of VA Loans",
     items: [
-      {
-        name: "Fixed Rate VA Loan",
-        description: "Maximum interest deduction for taxes, but more interest overall.",
-        href: "/types-of-loans/",
-        icon: HeartIcon,
-      },
-      {
-        name: "Adjustable Rate VA Loan (ARM)",
-        description: "Lower starting rate, but loan balance due can change long term.",
-        href: "/types-of-loans/",
-        icon: AdjustmentsIcon,
-      },
+      // {
+      //   name: "Fixed Rate VA Loan",
+      //   description: "Maximum interest deduction for taxes, but more interest overall.",
+      //   href: "/types-of-loans/",
+      //   icon: HeartIcon,
+      // },
+      // {
+      //   name: "Adjustable Rate VA Loan (ARM)",
+      //   description: "Lower starting rate, but loan balance due can change long term.",
+      //   href: "/types-of-loans/",
+      //   icon: AdjustmentsIcon,
+      // },
       {
         name: "VA Jumbo Loan",
         description: "A non-conforming loan, for an amount that exceeds conventional loan limits.",
@@ -222,13 +230,13 @@ const resources = [
         href: "/video/all-about-va-loans/",
         icon: AcademicCapIcon,
       },
-      {
-        name: "Our VA Loan Journey",
-        description: "Video series showcasing the entire journey from start to finish.",
-        // description: "Jimmy Vercellino and his veteran-run team serve you from the application to closing. Watch our personalized loan journey to see how we’ll get you and your partner into the home you’ve always wanted.",
-        href: "/video/our-va-loan-journey/",
-        icon: ChartBarIcon,
-      },
+      // {
+      //   name: "Our VA Loan Journey",
+      //   description: "Video series showcasing the entire journey from start to finish.",
+      //   // description: "Jimmy Vercellino and his veteran-run team serve you from the application to closing. Watch our personalized loan journey to see how we’ll get you and your partner into the home you’ve always wanted.",
+      //   href: "/video/our-va-loan-journey/",
+      //   icon: ChartBarIcon,
+      // },
     ],
   },
   {
@@ -256,26 +264,20 @@ const resources = [
   },
 ];
 
-const resourcesOld = [
+const refinance = [
   {
-    name: "Blog",
-    description: "Read helpful articles and guides.",
-    href: "/blog/",
+    name: "Cash Out Refinance",
+    description: "See how you can refinance to pull cash out of your home.",
+    // description: "We educate you on everything related to VA Loans so you can apply with confidence. Work with an experienced lender on a home loan made just for active-duty service members and veterans.",
+    href: "/va-loan-cash-out-refinance-what-you-need-to-know/",
+    icon: AcademicCapIcon,
   },
   {
-    name: "Video",
-    description: "Our video library covers the entire Loan Journey.",
-    href: "/video/journey/",
-  },
-  {
-    name: "FAQs",
-    description: "Get answers to the most recent questions.",
-    href: "/va-post-loan-faq/",
-  },
-  {
-    name: "Mortgage Term Glossary",
-    description: "Get familiar with the terminology",
-    href: "/video/glossary/",
+    name: "Streamline Refinance",
+    description: "Learn how you can lower the rate on your existing mortgage.",
+    // description: "Jimmy Vercellino and his veteran-run team serve you from the application to closing. Watch our personalized loan journey to see how we’ll get you and your partner into the home you’ve always wanted.",
+    href: "/arizona-va-streamline-refinance/",
+    icon: ChartBarIcon,
   },
 ];
 

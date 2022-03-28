@@ -29,7 +29,7 @@ const serializers = {
         <YouTube
           videoId={id}
           opts={YTopts}
-          containerClassName="mx-auto max-w-3xl aspect-video w-full"
+          containerClassName="mx-auto max-w-4xl aspect-video w-full"
         />
       );
     },

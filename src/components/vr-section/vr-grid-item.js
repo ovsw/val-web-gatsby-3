@@ -19,7 +19,12 @@ const VrGridItem = ({ description, image, link, title }) => {
           alt={image?.alt}
         />
 
-        <Link as="button" to={link} className="absolute inset-0 focus:outline-none" type="button">
+        <Link
+          as="button"
+          to={link}
+          className="normalizeBtnSafari absolute inset-0 focus:outline-none"
+          type="button"
+        >
           <span className="sr-only">View details for {title}</span>
         </Link>
       </div>

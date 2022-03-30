@@ -21,4 +21,9 @@
   .activeMainMenuItemStyles {
     /* @apply text-red-500; */
   }
+  .normalizeBtnSafari {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }

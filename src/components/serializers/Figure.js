@@ -9,7 +9,7 @@ export default ({ node }) => {
 
   const gatsbyImageData = getGatsbyImageData(
     node,
-    { width: 730, fit: "crop", height: 600 },
+    { width: 700, fit: "crop", height: 600 },
     clientConfig.sanity
   );
 
@@ -26,17 +26,17 @@ export default ({ node }) => {
   }
 
   return (
-    <>
+    <div className="max-w-[700px] mx-auto">
       {node.caption && (
-        <figure className={imageClassName}>
-          <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={node.alt} />
+        <figure className={`${imageClassName}`}>
+          <GatsbyImage image={gatsbyImageData} className="contentImage landscape2  !mx-auto" alt={node.alt} />
           <figcaption>{node.caption}</figcaption>
         </figure>
       )}
 
       {!node.caption && (
-        <GatsbyImage image={gatsbyImageData} className="contentImage landscape2" alt={node.alt} />
+          <GatsbyImage image={gatsbyImageData} className="contentImage landscape2  !mx-auto" alt={node.alt} />
       )}
-    </>
+    </div>
   );
 };

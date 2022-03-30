@@ -24,11 +24,11 @@ const InnerPageHeader = ({ title, headerImage }) => {
   const customImage = headerImage ? true : false;
 
   const headerContent = (
-    <div className="container">
+    <div className="kontainer">
       <div className="in-breadcrumb">
-        <div className="row align-items-center">
+        <div className="row align-items-center max-w-screen-md">
           <div className="col">
-            <h1 style={{ color: "white" }}>{title}</h1>
+            <h1 className="text-white text-5xl md:text-6xl font-bold px-4 lg:px-0">{title}</h1>
             {/* <ul>
             <li><a href='index.html'>Home</a></li>
             <li>Blog</li>

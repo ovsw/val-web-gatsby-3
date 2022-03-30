@@ -21,16 +21,19 @@ function BlogPost(props) {
         </span>
       </div>
       <img
-        style={{ margin: "0 auto 2rem", display: "block", width: "80%" }}
+        style={{ margin: "0 auto 2rem", display: "block", width: "100%" }}
+        className="px-4 lg:px-0"
         src={imageUrlFor(buildImageObj(mainImage))
-          .width(350)
-          .height(300)
+          .width(800)
+          .height(400)
           .fit("crop")
           .auto("format")
           .url()}
         alt={mainImage.alt}
       />
-      {_rawBody && <PortableText blocks={_rawBody} />}
+      <div className="prose-lg max-w-4xl px-4 lg:px-0">
+        {_rawBody && <PortableText blocks={_rawBody} />}
+      </div>
 
       <div className="in-blog-metabottom mt-30">
         {/* <span><a href='#'><i className='zmdi zmdi-favorite-outline' /> Like : 08</a> / <a href='#'><i className='zmdi zmdi-comment-outline' />Comment</a></span> */}

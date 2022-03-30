@@ -32,11 +32,11 @@ const Hero = () => {
           loading="eager"
           // fadeIn={false}
         >
-          <div className={`container ${customContainer}`}>
+          <div className={`w-full kontainer ${customContainer}`}>
             <div className={`row ${customRow}`}>
               <div className="col-lg-10">
                 <div className={`heroslider-content ${sliderContent}`}>
-                  <h1>
+                  <h1 className="mb-6">
                     <span>
                       From Marine to <br />
                       VA Loan Specialist

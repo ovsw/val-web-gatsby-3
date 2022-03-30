@@ -5,7 +5,8 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import GenericPage from "../components/generic-page";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import RightSidebar from "../containers/content/right-sidebar";
+import VrLayout from "../components/vr-section";
+import PortableText from "../components/portableText";
 
 // import {toPlainText} from '../lib/helpers'
 
@@ -14,6 +15,23 @@ const GenericPageTemplate = (props) => {
   const page = data && data.page;
 
   //console.log("pageContext:", pageContext);
+  const breadcrumbPages = [
+    {
+      name: page.subSection[0].section[0].title,
+      href: `/video/${page.subSection[0].section[0].slug.current}`,
+      current: false,
+    },
+    {
+      name: page.subSection[0].title,
+      href: `/video/${page.subSection[0].slug.current}`,
+      current: false,
+    },
+    {
+      name: page.title,
+      href: `/video/${page.subSection[0].slug.current}/${page.slug.current}`,
+      current: true,
+    },
+  ];
 
   return (
     <Layout>
@@ -34,9 +52,19 @@ const GenericPageTemplate = (props) => {
       )}
 
       {page && (
-        <RightSidebar title={page.title} path={location.pathname} headerImage={page.image}>
-          <GenericPage {...page} />
-        </RightSidebar>
+        <VrLayout
+          title={page.title}
+          section={page.subSection[0].section[0]}
+          subSection={page.subSection[0]}
+          image={page.image}
+          breadcrumbs={breadcrumbPages}
+        >
+          {page._rawBody && (
+            <div className="prose prose-xl max-w-prose prose-slate">
+              <PortableText blocks={page._rawBody} />
+            </div>
+          )}
+        </VrLayout>
       )}
     </Layout>
   );
@@ -54,6 +82,20 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      subSection {
+        id
+        title
+        slug {
+          current
+        }
+        section {
+          id
+          title
+          slug {
+            current
+          }
+        }
       }
       _rawBody(resolveReferences: { maxDepth: 5 })
     }

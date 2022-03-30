@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .activeVrSidebarSubCategory {
+    @apply !bg-blue-500 !text-white;
+  }
+  .activeVrSidebarLink {
+    @apply !text-red-500 font-bold;
+  }
+  .kontainer {
+    @apply mx-auto max-w-screen-xl;
+  }
+}
+
+@layer utilities {
+  .mainMenuFocusStyles {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-accent rounded;
+  }
+  .activeMainMenuItemStyles {
+    /* @apply text-red-500; */
+  }
+  .normalizeBtnSafari {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}

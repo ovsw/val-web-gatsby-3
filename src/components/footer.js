@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="footer">
       {/* Footer Contact Area */}
       <div className="footer-contact-area">
-        <div className="container">
+        <div className="kontainer">
           <div className="footer-contact">
             {/* <div className='row'> */}
             <p className="footer-contact-block" style={{ marginBottom: "0" }}>
@@ -82,7 +82,7 @@ const Footer = () => {
 
         {/* Footer Widgets Area */}
         <div className="footer-widgets-area section-padding-lg">
-          <div className="container">
+          <div className="kontainer">
             <div className="row widgets footer-widgets">
               <div className="col-lg-5 col-md-6">
                 <div className="single-widget widget-info">
@@ -264,7 +264,7 @@ const Footer = () => {
 
         {/* Footer Copyright Area */}
         <div className="footer-copyright-area">
-          <div className="container">
+          <div className="kontainer">
             <div className="row align-items-center">
               <div className="col-lg-7 col-12">
                 <p className="copyright-text">

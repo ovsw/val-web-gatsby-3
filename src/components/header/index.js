@@ -36,7 +36,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
     <header className="header">
       {/*  Header Top Area  */}
       <div className="header-toparea">
-        <div className="container">
+        <div className="kontainer">
           <div className="row justify-content-betwween">
             <div className="col-md-6">
               {/*  Header Logo */}
@@ -50,62 +50,28 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
               {/* Header Logo */}
             </div>
 
+            {/* Movile Navigation */}
             <div className="col-md-6 d-flex align-items-stretch justify-content-end">
-              {/* Movile Navigation */}
               <MobileNav
                 navStructure={siteNav}
                 showNav={showNav}
                 doShowNav={doShowNav}
                 doHideNav={doHideNav}
               />
-              {/* Movile Navigation */}
             </div>
+            {/* END Mobile Navigation */}
           </div>
-
-          {/* <div className='row justify-content-betwween'>
-          <div className='col-lg-6'>
-            <ul className='header-topcontact'>
-              <li><i className='zmdi zmdi-phone' /> PHONE : <a href='#'>123412341</a></li>
-              <li><i className='zmdi zmdi-email' /> E-MAIL : <a href='#'>demo@gmail.com</a></li>
-            </ul>
-          </div>
-          <div className='col-lg-6'>
-            <ul className='header-toplinks'>
-              <li><a href='#'>GET A QUOTE</a></li>
-              <li><a href='#'>NEED AN AGENT</a></li>
-            </ul>
-          </div>
-        </div> */}
         </div>
       </div>
       {/*  Header Top Area */}
 
       {/*  Header Bottom Area */}
       <div className="header-bottomarea">
-        <div className="container">
+        <div className="kontainer">
           <div className="header-bottom">
             {/*  Main Navigation */}
             <MainNav navStructure={siteNav} />
             {/* Main Navigation */}
-
-            {/* <div className='header-right-wrap'> */}
-            {/*  Header Search */}
-            {/* <div className='header-search'>
-              <button className='header-searchtrigger'><i className='zmdi zmdi-search' /></button>
-              <form className='header-searchbox' action='#'>
-                <input type='text' placeholder='Search...' />
-                <button type='submit'><i className='zmdi zmdi-search' /></button>
-              </form>
-            </div> */}
-            {/* Header Search */}
-
-            {/*  Buy Now */}
-            {/* <div className='buy-now'>
-              <a href='https://themeforest.net/item/gregory-agency-bootstrap-4-template/22864578?ref=AslamHasib' className='buy-now-button'>Buy Now</a>
-            </div> */}
-            {/* Buy Now */}
-
-            {/* </div> */}
           </div>
         </div>
       </div>
@@ -113,7 +79,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
 
       {/*  Mobile Menu */}
       <div className="mobile-menu-wrapper clearfix">
-        <div className="container">
+        <div className="kontainer">
           <div className="mobile-menu" />
         </div>
       </div>

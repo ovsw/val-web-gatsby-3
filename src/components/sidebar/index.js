@@ -6,7 +6,7 @@ import Social from "./social";
 
 const Sidebar = ({ loanCta, storyCta, blogCta, path, noBlogLink }) => {
   return (
-    <div className="col-lg-4">
+    <div className="col-lg-4 px-4 lg:px-0">
       <div className="row widgets right-sidebar">
         {!(path === "/apply/" || path === "/apply") && (
           <CTA

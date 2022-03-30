@@ -215,16 +215,16 @@ const mobileMainItems = [
   //   icon: AdjustmentsIcon,
   // },
   {
+    name: "VA Loans",
+    description: "All you need to know about VA Loans.",
+    href: "/va-loans/",
+    icon: HomeIcon,
+  },
+  {
     name: "VA Jumbo Loan",
     description: "A non-conforming loan, for an amount that exceeds conventional loan limits.",
     href: "/va-jumbo-loans/",
     icon: ViewGridIcon,
-  },
-  {
-    name: "Home Improvement VA Loan",
-    description: "All about VA guaranteed home loans available for home improvements.",
-    href: "/home-improvements-va-loan/",
-    icon: HomeIcon,
   },
   {
     name: "VA Refinance",
@@ -239,11 +239,17 @@ const mobileMainItems = [
     icon: BadgeCheckIcon,
   },
   {
-    name: "Video Resources",
-    description: "Get all of your questions answered in our forums or contact support.",
-    href: "/video/",
-    icon: PlayIcon,
+    name: "VA Loan Process",
+    description: "Step-by-Step Guide to Buying Your Own Home.",
+    href: "/va-loan-process/",
+    icon: ChartBarIcon,
   },
+  // {
+  //   name: "Video Resources",
+  //   description: "Get all of your questions answered in our forums or contact support.",
+  //   href: "/video/",
+  //   icon: PlayIcon,
+  // },
 ];
 const mobileLowerItems = [
   {
@@ -267,5 +273,9 @@ const mobileLowerItems = [
   //   href: "/va-loans-closing-costs-calculator/",
   // },
 
-  { name: "Contact", description: "Understand how we take your privacy seriously.", href: "#" },
+  {
+    name: "Contact",
+    description: "Understand how we take your privacy seriously.",
+    href: "/contact-me/",
+  },
 ];

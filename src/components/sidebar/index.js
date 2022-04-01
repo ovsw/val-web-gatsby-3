@@ -8,27 +8,29 @@ const Sidebar = ({ loanCta, storyCta, blogCta, path, noBlogLink }) => {
   return (
     <div className="col-lg-4 px-4 lg:px-0">
       <div className="row widgets right-sidebar">
-        {!(path === "/apply/" || path === "/apply") && (
-          <CTA
-            title="Get Started"
-            text="I am here to help you get your dream home. Click here to start the VA Loan application process."
-            url="https://connect.valoansforvets.com/"
-          />
-        )}
-        {!(path === "/my-story/" || path === "/my-story") && (
-          <CTA
-            title="My Story"
-            text="I am a committed and passionate professional who puts my VA Loan clients above all else."
-            url="/my-story/"
-          />
-        )}
-        {!noBlogLink && (
-          <CTA
-            title="Blog"
-            text="Follow my regular updates on information in the mortgage industry and VA Loans."
-            url="/blog/"
-          />
-        )}
+        <div className="pb-8   divide-y-2">
+          {!(path === "/apply/" || path === "/apply") && (
+            <CTA
+              title="Get Started"
+              text="I am here to help you get your dream home. Click here to start the VA Loan application process."
+              url="https://connect.valoansforvets.com/"
+            />
+          )}
+          {!(path === "/my-story/" || path === "/my-story") && (
+            <CTA
+              title="My Story"
+              text="I am a committed and passionate professional who puts my VA Loan clients above all else."
+              url="/my-story/"
+            />
+          )}
+          {!noBlogLink && (
+            <CTA
+              title="Blog"
+              text="Follow my regular updates on information in the mortgage industry and VA Loans."
+              url="/blog/"
+            />
+          )}
+        </div>
 
         <Text />
         <Social />

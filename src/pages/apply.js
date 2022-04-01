@@ -17,6 +17,7 @@ const ApplyPage = (props) => {
       <SEO
         title="Apply for a VA Loan | VA Loan Specialist | VA Loans for Vets"
         description="Apply for a VA Loan. Complete our comprehensive VA Loan application that will provide us detailed information to speed up the processing of mortgage applications."
+        slug="apply"
       />
       <Container>
         <div class="blog-content prose proxe-xl max-w-6xl my-20">

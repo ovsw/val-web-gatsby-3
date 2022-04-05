@@ -174,6 +174,41 @@ async function createGenericPages(graphql, actions, reporter) {
     });
   });
 }
+async function createLocationPages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPageLocation(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            seoNoIndex
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const pageEdges = (result.data.allSanityPageLocation || {}).edges || [];
+
+  pageEdges.forEach((edge, index) => {
+    const { id, slug = {}, seoNoIndex } = edge.node;
+    const path = `/location/${slug.current}/`;
+
+    reporter.info(`Creating location page: ${path}`);
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/location-page.js"),
+      context: { id, seoNoIndex },
+    });
+  });
+}
 
 async function createVideoResourcePages(graphql, actions, reporter) {
   const { createPage } = actions;
@@ -286,6 +321,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPages(graphql, actions, reporter);
   await createGenericPages(graphql, actions, reporter);
   await createVideoResourcePages(graphql, actions, reporter);
+  await createLocationPages(graphql, actions, reporter);
 
   const { createRedirect } = actions;
 

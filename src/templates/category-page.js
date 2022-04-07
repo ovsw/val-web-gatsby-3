@@ -34,7 +34,7 @@ const CategoryPageTemplate = (props) => {
       {errors && <SEO seoTitle="GraphQL Error" />}
       {page && (
         <SEO
-          seoTitle={page.seoTitle || page.title || "Untitled"}
+          title={page.seoTitle || page.title || "Untitled"}
           description={page.seoDescription || ""}
           slug={categorySlug}
         />

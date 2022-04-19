@@ -103,6 +103,13 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
           Mortgage Calculator
         </Link> */}
         <Link
+          to="/location/"
+          className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
+          activeClassName="activeMainMenuItemStyles"
+        >
+          Locations
+        </Link>
+        <Link
           to="/my-story/"
           className="text-lg font-medium text-gray-500 hover:text-gray-900 mainMenuFocusStyles"
           activeClassName="activeMainMenuItemStyles"

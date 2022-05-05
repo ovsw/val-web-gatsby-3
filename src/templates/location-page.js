@@ -21,7 +21,7 @@ const GenericPageTemplate = (props) => {
           title={page.seoTitle || page.title || "Untitled"}
           description={page.seoDescription || ""}
           noIndex={page.seoNoIndex}
-          slug={page.slug.current}
+          slug={`location/${page.slug.current}`}
         />
       )}
 

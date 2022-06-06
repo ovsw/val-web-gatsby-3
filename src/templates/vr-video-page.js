@@ -28,7 +28,7 @@ const GenericPageTemplate = (props) => {
     },
     {
       name: page.title,
-      href: `/video/${page.subSection[0].slug.current}/${page.slug.current}`,
+      href: `video/${page.subSection[0].slug.current}/${page.slug.current}`,
       current: true,
     },
   ];

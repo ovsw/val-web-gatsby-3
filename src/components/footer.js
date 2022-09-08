@@ -88,13 +88,13 @@ const Footer = () => {
                 <div className="single-widget widget-info">
                   <div className="logo">
                     <StaticImage
-                      src="../images/logo/GWBLogoTeamVERCELLINO-400.jpg"
-                      alt="GoldWater Bank Logo"
+                      src="../images/logo/FirstWesternLogoTeamVERCELLINO.png"
+                      alt="First Western Trust Logo"
                       placeholder="none"
                     />
                   </div>
                   <p>
-                    Goldwater Bank N.A. – Mortgage Division,
+                    First Western Trust – Mortgage Division,
                     <br /> NMLS #452955.
                   </p>
                   <p>
@@ -113,7 +113,7 @@ const Footer = () => {
                   <ul className="footer-nav">
                     <li>
                       <a
-                        href="https://goldwaterbank.mymortgage-online.com/?loanapp&siteid=4884527613&lar=wstar_jvercellin&workFlowId=29714"
+                        href="https://myfw.mymortgage-online.com/JimmyVercellino.html"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

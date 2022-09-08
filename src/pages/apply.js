@@ -25,12 +25,12 @@ const ApplyPage = (props) => {
             <h1 className="text-6xl">Start the Process – Refinance or Apply for a New VA Loan</h1>
             <p>
               By clicking "Start Application" below, you will be directed to a new site, affiliated
-              with Jimmy Vercellino and Goldwater Bank, that will allow us to begin the mortgage
+              with Jimmy Vercellino and First Western Trust, that will allow us to begin the mortgage
               loan application process.
             </p>
             <p>
               <a
-                href="https://goldwaterbank.mymortgage-online.com/?loanapp&amp;siteid=4884527613&amp;lar=wstar_jvercellin&amp;workFlowId=29714"
+                href="https://myfw.mymortgage-online.com/JimmyVercellino.html"
                 rel="noopener noreferrer"
                 target="_blank"
                 class="in-button in-button-theme"

@@ -5,13 +5,13 @@ module.exports = {
   siteTitleAlt: "VA Loans for Vets", // Alternative Site title for SEO
   siteTitleShort: "VA Loans for Vets", // short_name for manifest
   siteHeadline:
-    "Jimmy Vercellino is a VA Loans Specialist and top mortgage loan originator for Goldwater Bank N.A. in Phoenix, AZ.", // Headline for schema.org JSONLD
+    "Jimmy Vercellino is a VA Loans Specialist and top mortgage loan originator for First Western Trust in Phoenix, AZ.", // Headline for schema.org JSONLD
   siteUrl: "https://www.valoansforvets.com", // Domain of your site. No trailing slash!
   siteLanguage: "en", // Language Tag on <html> element
   siteLogo: "/logo.png", // Used for SEO and manifest
   defaultImage: "/images/jimmy-vercellino-image.jpg", // Used for SEO and manifest
   siteDescription:
-    "Jimmy Vercellino is a top producing mortgage loan originator for Goldwater Bank N.A. in Phoenix, AZ. His mission is to provide and assist all veterans and active duty military with all of their VA Home Loan Financing needs.",
+    "Jimmy Vercellino is a top producing mortgage loan originator for First Western Trust in Phoenix, AZ. His mission is to provide and assist all veterans and active duty military with all of their VA Home Loan Financing needs.",
   author: "OVS Websites", // Author for schema.org JSONLD
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional

@@ -94,13 +94,14 @@ const Footer = () => {
                     />
                   </div>
                   <p>
-                    First Western Trust – Mortgage Division,
-                    <br /> NMLS #452955.
+                    First Western Trust,
+                    <br /> NMLS ID 477166.
                   </p>
                   <p>
                     3602 E Campbell Ave,
                     <br /> Phoenix, AZ 85018 <br />
-                    Phone: <a href="tel:602-908-5849">602-908-5849</a> | Fax: 480-569-1363
+                    Phone: <a href="tel:18775051281">1-877-505-1281</a> 
+                    {/* | Fax: 480-569-1363 */}
                   </p>
                   <ul className="footer-socialicons">
                     <SocialLinks />
@@ -221,18 +222,11 @@ const Footer = () => {
 
             <div className="row mt-50">
               <div className="col-12">
-                <h6 className="h4" style={{ color: "white" }}>
+                {/* <h6 className="h4" style={{ color: "white" }}>
                   CIP Disclosure
-                </h6>
+                </h6> */}
                 <p style={{ fontSize: "0.8rem", lineHeight: "1.2rem", color: "lightgray" }}>
-                  Important Information about Procedures for Opening a New Account To help the
-                  government fight the funding of terrorism and money laundering activities, Federal
-                  law requires all financial institutions to obtain, verify, and record information
-                  that identifies each person who opens an account (e.g., establishes a formal
-                  relationship by means of a loan application) What this means for you: When you
-                  open an account, we will ask for your name, address, date of birth, and other
-                  information that will allow us to identify you. We may also ask to see your
-                  driver's license or other identifying documents.
+                This is not an offer to enter into an agreement. Not all customers will qualify. Information, rates and programs are subject to change without notice. All products are subject to credit and property approval. Other restrictions and limitations may apply. Equal Housing Lender.
                 </p>
                 <p>
                   <a
@@ -269,7 +263,7 @@ const Footer = () => {
               <div className="col-lg-7 col-12">
                 <p className="copyright-text">
                   &copy; {new Date().getFullYear()} &copy;{" "}
-                  <a href="#">Jimmy Vercellino NMLS #184169</a>, All Rights Reserved <br /> Website
+                  First Western Trust, Member FDIC. NMLS ID 477166. Call:<a href="tel:18775051281" style={{ color: "orange" }}>1-877-505-1281</a> <br /> Website
                   by{" "}
                   <a href="https://ovswebsites.com/" style={{ color: "red" }}>
                     OvS Websites

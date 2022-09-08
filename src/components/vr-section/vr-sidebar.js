@@ -83,7 +83,7 @@ const VrSidebar = ({ section, subSection }) => {
               // title
               <div key={i} className="">
                 <Link
-                  to={`/video/${vrSection.slug.current}`}
+                  to={`/video/${vrSection.slug.current}/`}
                   className="px-4 block font-bold text-xl py-3 !bg-primary text-white"
                 >
                   {vrSection.title}
@@ -96,7 +96,7 @@ const VrSidebar = ({ section, subSection }) => {
                       return (
                         <li key={i} className="">
                           <Link
-                            to={`/video/${subSection.slug.current}`}
+                            to={`/video/${subSection.slug.current}/`}
                             partiallyActive={true}
                             // activeStyle={{ color: "red" }}
                             activeClassName="!bg-accent !text-white"
@@ -111,7 +111,7 @@ const VrSidebar = ({ section, subSection }) => {
                                 <li key={i} className="pl-10 pr-4 py-2">
                                   <Link
                                     activeClassName="activeVrSidebarLink"
-                                    to={`/video/${subSection.slug.current}/${videoPage.slug.current}`}
+                                    to={`/video/${subSection.slug.current}/${videoPage.slug.current}/`}
                                   >
                                     {videoPage.title}
                                   </Link>

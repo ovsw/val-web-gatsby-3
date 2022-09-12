@@ -124,7 +124,7 @@ const DesktopNav = ({ siteNav, showNav, doShowNav, doHideNav }) => {
           Contact
         </Link>
         <a
-          href="https://connect.valoansforvets.com/"
+          href="https://myfw.mymortgage-online.com/JimmyVercellino.html"
           className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-accent hover:bg-accent-dark"
         >
           Apply

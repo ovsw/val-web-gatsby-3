@@ -177,7 +177,7 @@ const Header = ({ doHideNav, doShowNav, showNav, siteTitle }) => {
                 </div>
                 <div className="mt-6">
                   <a
-                    href="https://connect.valoansforvets.com/"
+                    href="https://myfw.mymortgage-online.com/JimmyVercellino.html"
                     className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-accent hover:bg-accent"
                   >
                     Apply

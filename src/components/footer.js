@@ -263,7 +263,7 @@ const Footer = () => {
               <div className="col-lg-7 col-12">
                 <p className="copyright-text">
                   &copy; {new Date().getFullYear()} &copy;{" "}
-                  First Western Trust, Member FDIC. NMLS ID 477166. Call:<a href="tel:18775051281" style={{ color: "orange" }}>1-877-505-1281</a> <br /> Website
+                  First Western Trust, Member FDIC. NMLS ID 477166. Call:<a href="tel:6029085849" style={{ color: "orange" }}>602-908-5849</a> <br /> Website
                   by{" "}
                   <a href="https://ovswebsites.com/" style={{ color: "red" }}>
                     OvS Websites
